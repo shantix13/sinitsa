@@ -1,0 +1,111 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  font-size: $font-size-root;
+}
+
+*,
+*::before,
+*::after,
+input[type="search"] {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  line-height: $line-height-base;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  min-width: 320px;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+blockquote,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul, li {
+	list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+
+.container{
+  position: relative;
+  margin: 0 auto;
+  width: 1170px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+a, button, .btn{
+  transition: all 0.4s 0.02s ease;
+}
