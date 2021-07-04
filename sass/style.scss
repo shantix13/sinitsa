@@ -22,6 +22,10 @@
         margin-right: 25px;
       }
 
+      img:hover {
+        opacity: 0.6;
+      }
+
     }
   }
 
@@ -125,11 +129,11 @@
         padding-right: 40px;
         position: relative;
 
-        &.deeper{
+        &.deeper {
           padding-bottom: 20px;
         }
 
-        &.deeper::after{
+        &.deeper::after {
           content: '';
           display: inline-block;
           width: 10px;
@@ -141,8 +145,8 @@
         &:last-of-type {
           padding-right: 0;
         }
-        
-        & > ul{
+
+        & > ul {
           position: absolute;
           top: 30px;
           width: 200px;
@@ -157,17 +161,17 @@
           visibility: hidden;
           opacity: 0;
 
-          li{
+          li {
             margin-bottom: 5px;
           }
 
-          a{
-            color:#fff;
+          a {
+            color: #fff;
           }
 
         }
 
-        &.deeper:hover a + ul{
+        &.deeper:hover a + ul {
           visibility: visible;
           opacity: 1;
         }
@@ -207,6 +211,18 @@
     span {
       color: $green;
     }
+
+    &::before {
+      content: '';
+      background: url('../images/icons/blue-paw.svg') center no-repeat;
+      display: block;
+      background-size: 100%;
+      margin: 0 auto;
+      width: 25px;
+      height: 20px;
+      margin-bottom: 7px;
+    }
+
   }
 
   p {
@@ -274,6 +290,7 @@
 
 #about-main {
   background-color: $green;
+  margin-top: 100px;
 
   .container {
     @include flex-justify-nowrap;
@@ -388,15 +405,30 @@
 #main-doctors {
   padding-top: 100px;
 
+  .in-doctors{
+    margin-right: -30px;
+  }
+
   h2 {
     font-weight: 800;
-    color: $blue;
+    color: $purple;
     font-size: 30px;
+    padding-bottom: 10px;
 
     span {
       color: $green
     }
+  }
 
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    color: $mid-purple;
+    margin-bottom: 30px;
+  }
+
+  .doctor {
+    margin-right: 30px;
   }
 
 }
@@ -409,9 +441,10 @@
     padding: 10px;
     border: 1px solid $border-color;
     @include bordex(10px);
+    padding-bottom: 0;
 
     img {
-      @include bordex(10px);
+      border-radius: 10px 10px 0 0;
 
       &:hover {
         @include ximg-h;
@@ -424,7 +457,9 @@
     font-size: 16px;
     text-align: center;
     text-decoration: none;
-    color: $blue;
+    color: $purple;
+    margin-top: 17px;
+    margin-bottom: 15px;
   }
 
   .status {
@@ -459,7 +494,47 @@
   }
 }
 
+.titlex {
+  @include flex-justify-nowrap;
+  align-items: center;
+
+  .titlex-btns {
+    @include flex-nowrap;
+
+    & > button{
+      display: block;
+      width: 50px;
+      height: 50px;
+      border: 1px solid $light-purple;
+      @include bordex(10px);
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-background-size: 10px 18px;
+      background-size: 10px 18px;
+      background-image: url('../images/icons/icon-arrow.svg');
+
+      &:hover{
+        background-color: $blue;
+        border-color: $blue;
+      }
+    }
+
+    .left-btn {
+      margin-right: 40px;
+    }
+
+    .right-btn{
+      transform: rotate(180deg);
+    }
+
+  }
+
+}
+
 #main-partners {
+
+  margin-top: 130px;
+
   .container {
     background-color: $green;
     padding-top: 70px;
@@ -478,6 +553,18 @@
       span {
         color: #fff;
       }
+
+      &::before {
+        content: '';
+        background: url('../images/icons/yellow-paw.svg') center no-repeat;
+        display: block;
+        background-size: 100%;
+        margin: 0 auto;
+        width: 25px;
+        height: 20px;
+        margin-bottom: 7px;
+      }
+
     }
 
     p {
@@ -488,9 +575,29 @@
 
     .in-partners {
       margin-top: 35px;
+      padding-bottom: 70px;
+
+      .slick-dots {
+        justify-content: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+
+      }
+
     }
 
   }
+
+  .partner {
+    margin-right: 20px;
+
+    img:hover{
+      opacity: 0.6;
+    }
+  }
+
 }
 
 #main-gallery {
@@ -510,17 +617,57 @@
   p {
     color: $grey;
     font-size: 18px;
+    margin-bottom: 30px;
   }
+
+  .photo {
+    margin-right: 30px;
+
+    img:hover{
+      opacity: 0.6;
+    }
+
+  }
+
+  .slick-dots {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+
+    li button::after {
+      background-color: $debugger-font;
+    }
+
+    li.slick-active button, li button:hover {
+      border-color: $blue;
+
+      &::after {
+        background-color: $blue;
+      }
+    }
+  }
+
+  .in-photos {
+    padding-bottom: 60px;
+    margin-right: -30px;
+  }
+
 }
 
 #seo-text {
   background-color: $second-bg;
+  margin-top: 100px;
 
   .container {
     @include flex-justify-nowrap;
 
     h2 {
       color: $blue;
+      margin-top: 70px;
+      font-size: 30px;
+      font-weight: 800;
 
       span {
         color: $green;
@@ -530,8 +677,13 @@
     p {
       font-size: 14px;
       color: $blue;
+      width: 570px;
     }
 
+  }
+
+  .left-side {
+    width: 700px;
   }
 
   img {
@@ -564,6 +716,10 @@ footer {
 
   li {
     margin-right: 25px;
+
+    a:hover {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -602,26 +758,26 @@ footer {
     padding-bottom: 20px;
   }
 
-  .phone{
+  .phone {
     font-weight: 700;
     font-size: 14px;
     padding-left: 25px;
     background: url('../images/icons/icon-phone-2.svg') left 4px no-repeat;
     margin-bottom: 15px;
 
-    a{
+    a {
       text-decoration: none;
       color: $purple;
     }
   }
 
-  .messenger{
+  .messenger {
     padding-left: 15px;
 
-    a{
+    a {
       margin-right: 10px;
 
-      &:hover{
+      &:hover {
         opacity: 0.7;
       }
     }
@@ -641,7 +797,7 @@ footer {
   margin-bottom: 20px;
 }
 
-.metro{
+.metro {
   color: $purple;
   font-size: 14px;
   font-weight: 500;
@@ -660,7 +816,7 @@ footer {
   background-color: $metro-1
 }
 
-#filial-1 .metro{
+#filial-1 .metro {
   color: $metro-1;
   background: url('../images/icons/icon-metro-1.svg') left center no-repeat;
 }
@@ -669,23 +825,21 @@ footer {
   background-color: $metro-2;
 }
 
-
 #filial-3 h4 {
   background-color: $metro-3;
 }
 
-
-#filial-2 .metro{
+#filial-2 .metro {
   color: $metro-3;
   background: url('../images/icons/icon-metro-2.svg') left center no-repeat;
 }
 
-#filial-3 .metro{
+#filial-3 .metro {
   color: $metro-3;
   background: url('../images/icons/icon-metro-3.svg') left center no-repeat;
 }
 
-.time{
+.time {
   color: $purple;
   font-size: 14px;
   font-weight: 500;
@@ -728,11 +882,457 @@ footer {
   }
 }
 
+#slider {
+  margin-bottom: 100px;
+  .slide {
+    position: relative;
+  }
+
+  .slide-content {
+    position: absolute;
+    left: 70px;
+    top: 80px;
+    width: 460px;
+
+    h2 {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 40px;
+      margin-bottom: 25px;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    a {
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      padding-left: 30px;
+      padding-right: 30px;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      @include bordex(10px);
+      margin-top: 30px;
+
+      &::after {
+        content: '';
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 20px;
+        height: 16px;
+        margin-left: 10px;
+      }
+    }
+
+  }
+
+  .top-block {
+    @include bordex(10px);
+    background-color: $yellow;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    display: inline-block;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .slide-1 .slide-content a, .slide-3 .slide-content a {
+    background-color: $blue;
+
+    &::after {
+      background-image: url('../images/icons/white-paw.svg');
+    }
+  }
+
+  .slide-2 .slide-content a, .slide-4 .slide-content a {
+    background-color: #fff;
+    color: $blue;
+
+    &::after {
+      background-image: url('../images/icons/blue-paw.svg');
+    }
+  }
+
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 70px;
+  @include flex-nowrap;
+
+  li {
+
+    margin-right: 7px;
+
+    button {
+      display: block;
+      width: 25px;
+      height: 25px;
+      @include bordex(50%);
+      background-color: transparent;
+      overflow: hidden;
+      text-indent: -99999px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid transparent;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 7px;
+        height: 7px;
+        @include bordex(50%);
+        left: 8px;
+        top: 8px;
+        background-color: $dark-green;
+        transition: all 0.3s 0.02s ease;
+      }
+
+    }
+
+    &:hover button, &.slick-active button {
+      border-color: $yellow;
+
+      &::after {
+        background-color: $yellow;
+      }
+
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+section .center {
+
+  width: 820px;
+  margin: 0 auto;
+  border-left: 1px solid $debugger-font;
+  border-right: 1px solid $debugger-font;
+  border-bottom: 1px solid $debugger-font;
+  height: 80px;
+
+  a {
+    font-size: 14px;
+    color: $blue;
+    font-weight: 500;
+    border: 1px solid $debugger-font;
+    @include bordex(10px);
+    text-decoration: none;
+    display: inline-flex;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    background-color: #fff;
+    position: relative;
+    top: 45px;
+
+    &::after {
+      content: '';
+      background: url('../images/icons/blue-arrow.svg') center no-repeat;
+      width: 25px;
+      height: 7px;
+      margin-left: 20px;
+    }
+
+  }
+}
+
+#right-icons {
+  position: fixed;
+  right: 0;
+  top: 30%;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mail i {
+    background-image: url('../images/icons/icon-mail-right.svg');
+  }
+
+  .cross i {
+    background-image: url('../images/icons/icon-cross-right.svg');
+  }
+
+  .support i {
+    background-image: url('../images/icons/icon-support-right.svg');
+  }
+
+  .locate i {
+    background-image: url('../images/icons/icon-locate-right.svg');
+  }
+
+  i {
+    height: 70px;
+    width: 70px;
+    background-color: $blue;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.4s 0.02s ease;
+  }
+
+  .mail {
+    border-radius: 8px 0 0;
+    overflow: hidden;
+  }
+
+  .locate {
+    border-radius: 0 0 0 8px;
+    overflow: hidden;
+  }
+
+  button {
+    @include flex-nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+
+    div{
+      overflow: hidden;
+      width: 0;
+      transition: all 0.4s 0.02s ease;
+      background-color: $blue;
+    }
+
+    span {
+      overflow: hidden;
+      width: 240px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      display: block;
+      text-align: center;
+      align-self: center;
+      padding-top: 22px;
+      padding-bottom: 21px;
+    }
+
+    &:hover div {
+      width: 240px;
+      border-radius: 5px 0 0 5px;
+      background-color: $right-blue;
+
+      & + i{
+        background-color: $right-blue;
+      }
+    }
+  }
+
+}
+
+.former {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(38, 48, 75, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+
+  .container {
+    width: 570px;
+    background-color: #fff;
+    @include bordex(10px);
+    padding-left: 50px;
+    padding-right: 50px;
+    height: auto;
+    padding-bottom: 35px;
+
+    h2 {
+      font-weight: 700;
+      color: $purple;
+      font-size: 30px;
+      padding-top: 35px;
+      margin-bottom: 25px;
+    }
+
+    .closer {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      background: url('../images/icons/closer.svg') center no-repeat;
+      display: block;
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+    }
+
+    .field{
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .required label::after{
+      content: '*';
+      color: $red;
+      margin-left: 3px;
+      margin-top: -2px;
+    }
+
+
+    input[type="text"]{
+      height: 60px;
+      display: block;
+      width: 100%;
+      border: 1px solid $light-purple;
+      @include bordex(10px);
+      font-size: 14px;
+      padding-left: 25px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    textarea{
+      height: 180px;
+      display: block;
+      width: 100%;
+      border: 1px solid $light-purple;
+      @include bordex(10px);
+      font-size: 14px;
+      padding-left: 25px;
+      padding-top: 22px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    select{
+      height: 60px;
+      display: block;
+      border: 1px solid $light-purple;
+      @include bordex(10px);
+      font-size: 14px;
+      padding-left: 25px;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    button{
+      background-color: $blue;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      width: 100%;
+      height: 60px;
+      @include bordex(10px);
+
+
+      &::after{
+        content: '';
+        background: url('../images/icons/white-paw.svg') center no-repeat;
+        display: block;
+        width: 20px;
+        height: 16px;
+        margin-left: 10px;
+      }
+    }
+
+  }
+
+  .sub-requied{
+    font-size: 14px;
+    font-weight: 400;
+
+    span{
+      color: $red;
+    }
+
+  }
+
+}
+
+.doc-form{
+  @include flex-nowrap;
+  align-items: center;
+  margin-bottom: 25px;
+
+  .image{
+    margin-right: 10px;
+  }
+
+  .doc-meta{
+    margin-top: -5px;
+  }
+
+  h5{
+    font-size: 16px;
+    font-weight: 500;
+    //margin-bottom: 15px;
+    color: $purple;
+    line-height: 25px;
+  }
+
+  a{
+    color: $blue;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+
+}
+
 // ximg
 
 #about-main .left-side img, .doctor > a > img {
   width: 100%;
   height: 100%;
+  transition: all 0.5s 0.02s ease;
 }
 
 // Slick
@@ -810,6 +1410,9 @@ footer {
   }
   img {
     display: block;
+    width: 100%;
+    height: auto;
+    transition: all 0.4s 0.02s ease;
   }
   &.slick-loading img {
     display: none;
@@ -836,8 +1439,8 @@ footer {
   }
 }
 
-.slick-arrow.slick-hidden {
-  display: none;
+.slick-arrow.slick-hidden, #main-doctors .slick-arrow, #main-gallery .slick-arrow {
+  display: none !important;
 }
 
 

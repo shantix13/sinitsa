@@ -79,7 +79,7 @@ img {
   max-width: 100%;
 }
 
-[tabindex="-1"]:focus {
+[tabindex="-1"]:focus, *[tabindex], .btn, button, button:focus, .btn:focus, input, select, textarea {
   outline: none !important;
 }
 
@@ -108,4 +108,8 @@ textarea,
 
 a, button, .btn{
   transition: all 0.4s 0.02s ease;
+}
+
+textarea{
+  resize: none;
 }

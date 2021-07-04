@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ветеринарная клиника Синица.</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -51,13 +52,13 @@
                     <li><a href="/">Главная</a></li>
                     <li><a href="#">О нас</a></li>
                     <li class="deeper"><a href="#">Услуги</a>
-                    <ul>
-                        <li><a href="#">Услуга 1</a></li>
-                        <li><a href="#">Услуга 2</a></li>
-                        <li><a href="#">Услуга 3</a></li>
-                        <li><a href="#">Услуга 4</a></li>
-                        <li><a href="#">Услуга 5</a></li>
-                    </ul>
+                        <ul>
+                            <li><a href="#">Услуга 1</a></li>
+                            <li><a href="#">Услуга 2</a></li>
+                            <li><a href="#">Услуга 3</a></li>
+                            <li><a href="#">Услуга 4</a></li>
+                            <li><a href="#">Услуга 5</a></li>
+                        </ul>
                     </li>
                     <li><a href="#">Команда</a></li>
                     <li><a href="#">Вакансии</a></li>
@@ -76,7 +77,76 @@
 <main>
     <section id="slider">
         <div class="container">
+            <div class="slide slide-1">
+                <img src="./images/slider/slide-1.png" alt="slide">
+                <div class="slide-content">
+                    <div class="top-block">
+                        -20%
+                    </div>
+                    <h2>
+                        <strong>Скидка</strong> на вакцинацию
+                        кошек и собак
+                    </h2>
+                    <p>
+                        Приведите своего питомца на вакцинацию по скидке -20%
+                    </p>
+                    <a href="#">
+                        Записаться на прием
+                    </a>
+                </div>
+            </div>
 
+            <div class="slide slide-2">
+                <img src="./images/slider/slide-2.png" alt="slide">
+                <div class="slide-content">
+                    <h2>
+                        <strong>Нет возможности взять питомца в отпуск? Не с кем оставить на время?</strong>
+                    </h2>
+                    <p>
+                        В зоотеле в Синице-комфортные условия для питомцев на время вашего отпуска, мы обещаем заботу
+                        полного цикла
+                    </p>
+                    <a href="#">
+                        Узнать подробнее
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide slide-2">
+                <img src="./images/slider/slide-3.png" alt="slide">
+                <div class="slide-content">
+                    <div class="top-block">
+                        Инфекционный стационар
+                    </div>
+                    <h2>
+                        Комплекс мер <strong>“Стоп-микроб”</strong>
+                    </h2>
+                    <p>
+                        В инфекционном стационаре стерильно и безопасно.
+                    </p>
+                    <a href="#">
+                        Узнать подробнее
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide slide-3">
+                <img src="./images/slider/slide-4.png" alt="slide">
+                <div class="slide-content">
+                    <div class="top-block">
+                        Дневной стационар
+                    </div>
+                    <h2>
+                        Услуга дневного размещения <strong>“Под присмотром”</strong>
+                    </h2>
+                    <p>
+                        Когда питомцу нездоровится, а вам нужно по делам
+                    </p>
+                    <a href="#">
+                        Узнать подробнее
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -246,8 +316,17 @@
 
     <section id="main-doctors">
         <div class="container">
-            <h2><span>Врачи</span> нашей клиники</h2>
-            <p>Наша клиника предоставляет широкий спектр услуг для ваших питомцев</p>
+            <div class="titlex">
+                <div class="in-titlex">
+                    <h2><span>Врачи</span> нашей клиники</h2>
+                    <p>Наша клиника предоставляет широкий спектр услуг для ваших питомцев</p>
+                </div>
+
+                <div class="titlex-btns">
+                    <button class="left-btn"></button>
+                    <button class="right-btn"></button>
+                </div>
+            </div>
 
             <div class="in-doctors">
                 <div class="doctor">
@@ -349,6 +428,24 @@
                         <img src="./images/partners/partner-4.png" alt="partner">
                     </a>
                 </div>
+
+                <div class="partner">
+                    <a href="#">
+                        <img src="./images/partners/partner-3.png" alt="partner">
+                    </a>
+                </div>
+
+                <div class="partner">
+                    <a href="#">
+                        <img src="./images/partners/partner-2.png" alt="partner">
+                    </a>
+                </div>
+
+                <div class="partner">
+                    <a href="#">
+                        <img src="./images/partners/partner-1.png" alt="partner">
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -356,10 +453,19 @@
 
     <section id="main-gallery">
         <div class="container">
-            <h2><span>Фотогалерея</span> наших филиалов</h2>
-            <p>
-                Наша клиника предоставляет широкий спектр услуг для ваших питомцев
-            </p>
+            <div class="titlex">
+                <div class="in-titlex">
+                    <h2><span>Фотогалерея</span> наших филиалов</h2>
+                    <p>
+                        Наша клиника предоставляет широкий спектр услуг для ваших питомцев
+                    </p>
+                </div>
+
+                <div class="titlex-btns">
+                    <button class="left-btn"></button>
+                    <button class="right-btn"></button>
+                </div>
+            </div>
 
             <div class="in-photos">
                 <div class="photo">
@@ -383,6 +489,24 @@
                 <div class="photo">
                     <a href="">
                         <img src="./images/gallery/gallery-1.png" alt="gallery">
+                    </a>
+                </div>
+
+                <div class="photo">
+                    <a href="">
+                        <img src="./images/gallery/gallery-1.png" alt="gallery">
+                    </a>
+                </div>
+
+                <div class="photo">
+                    <a href="">
+                        <img src="./images/gallery/gallery-2.png" alt="gallery">
+                    </a>
+                </div>
+
+                <div class="photo">
+                    <a href="">
+                        <img src="./images/gallery/gallery-3.png" alt="gallery">
                     </a>
                 </div>
             </div>
@@ -534,7 +658,201 @@
         </div>
     </div>
 </footer>
+<!-- Кнопки для попапов спарва -->
+<div id="right-icons">
+    <ul>
+        <li>
+            <button class="mail"><div><span>Связаться с нами</span></div><i></i></button>
+        </li>
+        <li>
+            <button class="cross"><div><span>Записаться к врачу</span></div><i></i></button>
+        </li>
+        <li>
+            <button class="support"><div><span>Онлайн-консультация</span></div><i></i></button>
+        </li>
+        <li>
+            <button class="locate"><div><span>Адреса клиник</span></div><i></i></button>
+        </li>
+    </ul>
+</div>
 
+<!-- Формы попапа -->
+
+<div class="former" id="mail-form">
+    <div class="container">
+        <h2>Записаться к врачу</h2>
+        <span class="closer"></span>
+        <form action="">
+            <div class="field required">
+                <label for="contacter">Контактное лицо</label>
+                <input type="text" name="" id="contacter" placeholder="Контактное лицо" required>
+            </div>
+
+            <div class="field required">
+                <label for="who-pet">Кто Ваш питомец?</label>
+                <input type="text" name="" id="who-pet" placeholder="Кто Ваш питомец?" required>
+            </div>
+
+            <div class="field required">
+                <label for="service-type">Какая услуга вам нужна?</label>
+                <select name="" id="service-type">
+                    <option value="">Услуга 1</option>
+                    <option value="">Услуга 2</option>
+                    <option value="">Услуга 3</option>
+                    <option value="">Услуга 4</option>
+                </select>
+            </div>
+
+            <div class="field required">
+                <label for="your-phone">Контактный телефон</label>
+                <input type="text" name="" id="your-phone" placeholder="Контактный телефон" required>
+            </div>
+
+            <div class="field">
+                <button type="submit">Записаться на прием</button>
+            </div>
+
+            <p class="sub-requied"><span>*</span> Поля отмечены обязательны для заполнения</p>
+        </form>
+    </div>
+</div>
+
+<!-- Форма Онлайн-консультация -->
+
+<div class="former" id="consult-form">
+    <div class="container">
+        <h2>Онлайн консультация</h2>
+        <span class="closer"></span>
+        <form action="">
+            <div class="field required">
+                <label for="contacter">Контактное лицо</label>
+                <input type="text" name="" id="contacter" placeholder="Контактное лицо" required>
+            </div>
+
+            <div class="field required">
+                <label for="who-pet">Кто Ваш питомец?</label>
+                <input type="text" name="" id="who-pet" placeholder="Кто Ваш питомец?" required>
+            </div>
+
+            <div class="field required">
+                <label for="service-type">Какая услуга вам нужна?</label>
+                <select name="" id="service-type">
+                    <option value="">Услуга 1</option>
+                    <option value="">Услуга 2</option>
+                    <option value="">Услуга 3</option>
+                    <option value="">Услуга 4</option>
+                </select>
+            </div>
+
+            <div class="field required">
+                <label for="your-phone">Контактный телефон</label>
+                <input type="text" name="" id="your-phone" placeholder="Контактный телефон" required>
+            </div>
+
+            <div class="field">
+                <button type="submit">Записаться на прием</button>
+            </div>
+
+            <p class="sub-requied"><span>*</span> Поля отмечены обязательны для заполнения</p>
+        </form>
+    </div>
+</div>
+
+
+<!-- Форма Заказа услуги с авой дока -->
+
+<div class="former" id="mail-form-doc">
+    <div class="container">
+        <h2>Записаться к врачу</h2>
+        <span class="closer"></span>
+        <form action="">
+
+            <div class="doc-form">
+                <div class="image">
+                    <img src="./images/doc-photo.png" alt="doc-photo">
+                </div>
+
+                <div class="doc-meta">
+                    <h5>
+                        Ваш врач:
+                    </h5>
+
+                    <a href="#" target="_blank">
+                        Володина Ксения Сергеевна
+                    </a>
+                </div>
+            </div>
+
+            <div class="field required">
+                <label for="contacter">Контактное лицо</label>
+                <input type="text" name="" id="contacter" placeholder="Контактное лицо" required>
+            </div>
+
+            <div class="field required">
+                <label for="who-pet">Кто Ваш питомец?</label>
+                <input type="text" name="" id="who-pet" placeholder="Кто Ваш питомец?" required>
+            </div>
+
+            <div class="field required">
+                <label for="service-type">Какая услуга вам нужна?</label>
+                <select name="" id="service-type">
+                    <option value="">Услуга 1</option>
+                    <option value="">Услуга 2</option>
+                    <option value="">Услуга 3</option>
+                    <option value="">Услуга 4</option>
+                </select>
+            </div>
+
+            <div class="field required">
+                <label for="your-phone">Контактный телефон</label>
+                <input type="text" name="" id="your-phone" placeholder="Контактный телефон" required>
+            </div>
+
+            <div class="field">
+                <button type="submit">Записаться на прием</button>
+            </div>
+
+            <p class="sub-requied"><span>*</span> Поля отмечены обязательны для заполнения</p>
+        </form>
+    </div>
+</div>
+
+
+<!-- Форма Связаться с Нами -->
+
+<div class="former" id="feedback-form">
+    <div class="container">
+        <h2>Связаться с нами</h2>
+        <span class="closer"></span>
+        <form action="">
+            <div class="field required">
+                <label for="fio">Ф.И.О.</label>
+                <input type="text" name="" id="fio" placeholder="Ф.И.О." required>
+            </div>
+
+            <div class="field required">
+                <label for="your-phone">Контактный телефон</label>
+                <input type="text" name="" id="your-phone" placeholder="Контактный телефон" required>
+            </div>
+
+            <div class="field">
+                <label for="your-mail">Email</label>
+                <input type="text" name="" id="your-mail" placeholder="Email" required>
+            </div>
+
+            <div class="field required">
+                <label for="your-mail">Ваше сообщение</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Ваше сообщение"></textarea>
+            </div>
+
+            <div class="field">
+                <button type="submit">Отправить сообщение</button>
+            </div>
+
+            <p class="sub-requied"><span>*</span> Поля отмечены обязательны для заполнения</p>
+        </form>
+    </div>
+</div>
 
 <script src="./js/template.js"></script>
 </body>
