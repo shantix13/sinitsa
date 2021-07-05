@@ -611,10 +611,10 @@ $('.cross').click(function () {
 });
 
 
-$('.locate').click(function () {
-    $('#feedback-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
-    return false;
-});
+// $('.locate').click(function () {
+//     $('#feedback-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
+//     return false;
+// });
 
 $('.closer').click(function () {
     $('.former').animate({'opacity': '0'}, 600, function () {
@@ -633,37 +633,52 @@ $(document).keydown(function (e) {
 });
 
 
-$('#main-doctors .left-btn').on('click', function(){
+// Клик вне формы закрывает ее.
+
+// $(function ($) {
+//     $(document).mouseup(function (e) {
+//         var div = $(".former .container");
+//         if (!div.is(e.target)
+//             && div.has(e.target).length === 0) {
+//             $('.former').animate({'opacity': '0'}, 600, function () {
+//                 $('.former').css({'display': 'none'});
+//                 return false;
+//             });
+//         }
+//     });
+// });
+
+
+$('#main-doctors .left-btn').on('click', function () {
     $('#main-doctors .slick-prev').trigger('click');
 });
 
-$('#main-doctors .right-btn').on('click', function(){
+$('#main-doctors .right-btn').on('click', function () {
     $('#main-doctors .slick-next').trigger('click');
 });
 
 
-
-$('#main-gallery .left-btn').on('click', function(){
+$('#main-gallery .left-btn').on('click', function () {
     $('#main-gallery .slick-prev').trigger('click');
 });
 
-$('#main-gallery .right-btn').on('click', function(){
+$('#main-gallery .right-btn').on('click', function () {
     $('#main-gallery .slick-next').trigger('click');
 });
 
 
 // Добавляем возможность менять цвет svg
-$('img.img-svg').each(function(){
+$('img.img-svg').each(function () {
     var $img = $(this);
     var imgClass = $img.attr('class');
     var imgURL = $img.attr('src');
-    $.get(imgURL, function(data) {
+    $.get(imgURL, function (data) {
         var $svg = $(data).find('svg');
-        if(typeof imgClass !== 'undefined') {
-            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        if (typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass + ' replaced-svg');
         }
         $svg = $svg.removeAttr('xmlns:a');
-        if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+        if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
             $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
         }
         $img.replaceWith($svg);

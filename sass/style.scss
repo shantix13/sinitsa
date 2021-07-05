@@ -4,6 +4,10 @@
 @import "normalize";
 @import "base";
 
+header {
+  margin-bottom: 10px;
+}
+
 #top {
   position: relative;
   border-bottom: 1px solid $border-color;
@@ -22,7 +26,7 @@
         margin-right: 25px;
       }
 
-      img{
+      img {
         transition: all 0.4s 0.02s ease;
 
         &:hover {
@@ -118,13 +122,13 @@
 
   .logo {
     position: absolute;
-    top: 10px;
+    top: 17px;
   }
 
   nav {
     position: absolute;
     right: 80px;
-    margin-top: 20px;
+    margin-top: 27px;
 
     & > ul {
       @include flex-nowrap;
@@ -199,12 +203,24 @@
   .search {
     position: absolute;
     right: 0;
-    top: 22px;
+    top: 30px;
   }
 
 }
 
 #main-services {
+
+  &.cat-services{
+    .center a::after{
+        content: '';
+        background: url("../images/icons/icon-refresh.svg") center no-repeat;
+        width: 16px;
+        height: 16px;
+        margin-left: 20px;
+      }
+    }
+
+
   h2 {
     text-align: center;
     color: $purple;
@@ -240,12 +256,12 @@
     .in-service {
       position: relative;
       overflow: hidden;
-      border: 1px solid $border-color;
       @include bordex(10px);
 
       img {
         @include ximg;
-        height: 100%;
+        @include bordex(10px);
+        border: 1px solid $border-color;
 
         &:hover {
           @include ximg-h;
@@ -280,15 +296,15 @@
   }
 }
 
-#service-1 h3, #service-5 h3 {
+.green h3 {
   color: $green;
 }
 
-#service-2 h3, #service-6 h3 {
+.blue h3 {
   color: $blue;
 }
 
-#service-3 h3, #service-4 h3 {
+.brown h3 {
   color: $brown;
 }
 
@@ -298,13 +314,16 @@
 
   .container {
     @include flex-justify-nowrap;
+    width: 1537px;
+    margin-left: 0;
 
     .left-side {
       width: 568px;
     }
 
     .right-side {
-      width: 568px;
+      //width: 568px;
+      width: 870px;
 
       h2 {
         color: #fff;
@@ -357,6 +376,9 @@
   padding-top: 70px;
   padding-bottom: 70px;
   background-color: $blue;
+  background-image: url('../images/pattern-1.png');
+  background-position: center;
+  background-repeat: round;
 
   h2 {
     font-weight: 800;
@@ -409,7 +431,7 @@
 #main-doctors {
   padding-top: 100px;
 
-  .in-doctors{
+  .in-doctors {
     margin-right: -30px;
   }
 
@@ -505,7 +527,7 @@
   .titlex-btns {
     @include flex-nowrap;
 
-    & > button{
+    & > button {
       display: flex;
       width: 50px;
       height: 50px;
@@ -514,21 +536,18 @@
       align-items: center;
       justify-content: center;
 
-
-      svg{
+      svg {
         fill: $grey;
-        transition: all 0.4 0.02s ease;
+        //transition: all 0.4 0.02s ease;
       }
 
-      &:hover{
+      &:hover {
         background-color: $blue;
         border-color: $blue;
 
-
-        svg{
+        svg {
           fill: #fff;
         }
-
 
       }
     }
@@ -537,7 +556,7 @@
       margin-right: 40px;
     }
 
-    .right-btn{
+    .right-btn {
       transform: rotate(180deg);
     }
 
@@ -606,10 +625,6 @@
 
   .partner {
     margin-right: 20px;
-
-    img:hover{
-      opacity: 0.6;
-    }
   }
 
 }
@@ -637,7 +652,7 @@
   .photo {
     margin-right: 30px;
 
-    img:hover{
+    img:hover {
       opacity: 0.6;
     }
 
@@ -675,7 +690,12 @@
   margin-top: 100px;
 
   .container {
-    @include flex-justify-nowrap;
+    //@include flex-justify-nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-right: 0;
+    width: 1537px;
 
     h2 {
       color: $blue;
@@ -690,14 +710,15 @@
 
     p {
       font-size: 14px;
-      color: $blue;
-      width: 570px;
+      color: $purple;
+     // width: 570px;
     }
 
   }
 
   .left-side {
-    width: 700px;
+    //width: 700px;
+    width: 50%;
   }
 
   img {
@@ -709,17 +730,19 @@
 footer {
   background-color: $purple;
   height: 500px;
+  position: relative;
 }
 
 #sub-logo {
   color: #fff;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   position: absolute;
   top: 150px;
   width: 270px;
   border-bottom: 1px solid $debugger;
   padding-bottom: 25px;
+  color: $debugger-font;
 }
 
 #bottom-socials {
@@ -767,16 +790,16 @@ footer {
   h4 {
     font-size: 16px;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
-    padding-top: 17px;
-    padding-bottom: 20px;
+    padding-top: 12px;
+    padding-bottom: 14px;
   }
 
   .phone {
     font-weight: 700;
     font-size: 14px;
-    padding-left: 25px;
+    padding-left: 28px;
     background: url('../images/icons/icon-phone-2.svg') left 4px no-repeat;
     margin-bottom: 12px;
 
@@ -784,19 +807,15 @@ footer {
       text-decoration: none;
       color: $purple;
 
-
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
     }
 
-
-
-
   }
 
   .messenger {
-    padding-left: 15px;
+    padding-left: 26px;
 
     a {
       margin-right: 10px;
@@ -816,7 +835,7 @@ footer {
   background: url('../images/icons/icon-locate.svg') left center no-repeat;
   -webkit-background-size: 15px;
   background-size: 15px;
-  padding-left: 25px;
+  padding-left: 28px;
   line-height: 18px;
   margin-bottom: 20px;
 }
@@ -826,7 +845,7 @@ footer {
   font-size: 14px;
   font-weight: 500;
   background-size: 15px;
-  padding-left: 25px;
+  padding-left: 28px;
   margin-bottom: 20px;
 }
 
@@ -836,29 +855,29 @@ footer {
   padding-top: 20px;
 }
 
-#filial-1 h4 {
+.red h4 {
   background-color: $metro-1
 }
 
-#filial-1 .metro {
+.red .metro {
   color: $metro-1;
   background: url('../images/icons/icon-metro-1.svg') left center no-repeat;
 }
 
-#filial-2 h4 {
+.green h4 {
   background-color: $metro-2;
 }
 
-#filial-3 h4 {
+.blue h4 {
   background-color: $metro-3;
 }
 
-#filial-2 .metro {
-  color: $metro-3;
+.green .metro {
+  color: $metro-2;
   background: url('../images/icons/icon-metro-2.svg') left center no-repeat;
 }
 
-#filial-3 .metro {
+.blue .metro {
   color: $metro-3;
   background: url('../images/icons/icon-metro-3.svg') left center no-repeat;
 }
@@ -866,13 +885,15 @@ footer {
 .time {
   color: $purple;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   background: url('../images/icons/icon-time.svg') left center no-repeat;
-  -webkit-background-size: 15px;
-  background-size: 15px;
-  padding-left: 25px;
+  -webkit-background-size: 20px;
+  background-size: 20px;
+  padding-left: 28px;
   line-height: 18px;
   margin-bottom: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 #debugger {
@@ -887,14 +908,14 @@ footer {
 
 #copy {
   position: absolute;
-  top: 23px;
+  top: 24px;
   left: 0;
 }
 
 #studio {
   position: absolute;
   right: 0;
-  top: 23px;
+  top: 24px;
 
   a {
     color: $green;
@@ -981,7 +1002,7 @@ footer {
     margin-bottom: 20px;
   }
 
-  .slide-1 .slide-content a, .slide-3 .slide-content a {
+  .slide-content a {
     background-color: $blue;
 
     &::after {
@@ -989,7 +1010,7 @@ footer {
     }
   }
 
-  .slide-2 .slide-content a, .slide-4 .slide-content a {
+  .white .slide-content a {
     background-color: #fff;
     color: $blue;
 
@@ -1023,6 +1044,7 @@ footer {
       box-sizing: border-box;
       border: 1px solid transparent;
       position: relative;
+      padding: 0;
 
       &::after {
         content: '';
@@ -1131,7 +1153,7 @@ section .center {
     overflow: hidden;
   }
 
-  .locate{
+  .locate {
     border-radius: 0 0 0 8px;
     overflow: hidden;
   }
@@ -1146,7 +1168,7 @@ section .center {
     box-sizing: border-box;
     padding: 0;
 
-    div{
+    div {
       overflow: hidden;
       width: 0;
       transition: all 0.4s 0.02s ease;
@@ -1171,7 +1193,7 @@ section .center {
       border-radius: 5px 0 0 5px;
       background-color: $right-blue;
 
-      & + i{
+      & + i {
         background-color: $right-blue;
         //border-radius: 0;
       }
@@ -1220,7 +1242,7 @@ section .center {
       height: 25px;
     }
 
-    .field{
+    .field {
       margin-bottom: 20px;
     }
 
@@ -1231,15 +1253,14 @@ section .center {
       margin-bottom: 10px;
     }
 
-    .required label::after{
+    .required label::after {
       content: '*';
       color: $red;
       margin-left: 3px;
       margin-top: -2px;
     }
 
-
-    input[type="text"]{
+    input[type="text"] {
       height: 60px;
       display: block;
       width: 100%;
@@ -1252,7 +1273,7 @@ section .center {
       box-sizing: border-box;
     }
 
-    textarea{
+    textarea {
       height: 180px;
       display: block;
       width: 100%;
@@ -1266,7 +1287,7 @@ section .center {
       box-sizing: border-box;
     }
 
-    select{
+    select {
       height: 60px;
       display: block;
       border: 1px solid $light-purple;
@@ -1279,7 +1300,7 @@ section .center {
       box-sizing: border-box;
     }
 
-    button{
+    button {
       background-color: $blue;
       text-align: center;
       display: flex;
@@ -1292,8 +1313,7 @@ section .center {
       height: 60px;
       @include bordex(10px);
 
-
-      &::after{
+      &::after {
         content: '';
         background: url('../images/icons/white-paw.svg') center no-repeat;
         display: block;
@@ -1305,11 +1325,11 @@ section .center {
 
   }
 
-  .sub-requied{
+  .sub-requied {
     font-size: 14px;
     font-weight: 400;
 
-    span{
+    span {
       color: $red;
     }
 
@@ -1317,20 +1337,20 @@ section .center {
 
 }
 
-.doc-form{
+.doc-form {
   @include flex-nowrap;
   align-items: center;
   margin-bottom: 25px;
 
-  .image{
+  .image {
     margin-right: 10px;
   }
 
-  .doc-meta{
+  .doc-meta {
     margin-top: -5px;
   }
 
-  h5{
+  h5 {
     font-size: 16px;
     font-weight: 500;
     //margin-bottom: 15px;
@@ -1338,23 +1358,360 @@ section .center {
     line-height: 25px;
   }
 
-  a{
+  a {
     color: $blue;
     font-size: 16px;
     text-decoration: none;
     font-weight: 500;
 
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }
+}
 
+.title-block .container {
+  background-color: $blue;
+  padding-top: 28px;
+  padding-bottom: 38px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  @include bordex(10px);
+  text-align: center;
+
+  h1 {
+    font-weight: 800;
+    font-size: 36px;
+    color: #fff;
+    line-height: 40px;
+    padding-top: 10px;
+  }
+
+}
+
+#breadz {
+  ul {
+    @include flex-nowrap;
+    justify-content: center;
+    align-items: center;
+
+    li {
+
+      margin-right: 5px;
+
+
+      &:last-of-type{
+        position: relative;
+        top: 1px;
+      }
+
+
+      &:last-of-type a {
+        color: $yellow;
+      }
+
+      &::after {
+        content: '•';
+        color: $breadz-home;
+        font-size: 20px;
+        margin-left: 5px;
+        position: relative;
+        top: 3px;
+      }
+
+      &:last-of-type::after {
+        display: none;
+      }
+    }
+
+    a {
+      color: $breadz-home;
+      text-decoration: none;
+      font-size: 16px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// service item
+
+.available {
+  @include flex-nowrap;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+
+  h4 {
+    font-size: 14px;
+    margin-right: 20px;
+    color: $purple;
+  }
+
+  a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: $purple;
+    margin-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 162px;
+    @include bordex(10px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+#top-item {
+  @include flex-justify-nowrap;
+  align-items: flex-start;
+
+  .image {
+    width: 40%;
+
+    img {
+      @include bordex(10px);
+    }
+  }
+
+  .description {
+    width: 57%;
+
+    & > div:first-of-type {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 30px;
+      border: 1px solid $debugger-font;
+      @include bordex(10px);
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 17px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  .btns {
+    @include flex-nowrap;
+    margin-top: 30px;
+
+    button {
+      @include flex-nowrap;
+      align-items: center;
+
+    }
+
+    .sign-up {
+      background-color: $blue;
+      margin-right: 30px;
+
+      &::after {
+        content: '';
+        background: url('../images/icons/white-paw.svg') center no-repeat;
+        width: 20px;
+        height: 16px;
+        margin-left: 10px;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+      }
+    }
+
+    .consult {
+      background-color: $green;
+
+      &::after {
+        content: '';
+        background: url('../images/icons/icon-support-right.svg') center no-repeat;
+        width: 10px;
+        height: 16px;
+        margin-left: 10px;
+        display: block;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+#sub-item {
+  @include flex-justify-nowrap;
+  margin-top: 50px;
+
+  .left-side {
+    width: 66%;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .table-item {
+    margin-bottom: 50px;
+  }
+
+  .table-caption {
+    @include flex-nowrap;
+    align-items: center;
+
+    & > div {
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+      border-top: 1px solid $debugger-font;
+      padding-top: 22px;
+      padding-bottom: 25px;
+
+      &:first-of-type {
+        width: 10%;
+        border-left: 1px solid $debugger-font;
+        border-radius: 10px 0 0 0;
+      }
+
+      &:nth-of-type(2) {
+        width: 65%;
+        border-left: 1px solid $debugger-font;
+        border-right: 1px solid $debugger-font;
+      }
+
+      &:nth-of-type(3) {
+        width: 25%;
+        border-right: 1px solid $debugger-font;
+        border-radius: 0 10px 0 0;
+      }
+    }
+  }
+
+  .table-row {
+    @include flex-nowrap;
+    align-items: center;
+
+    & > div {
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid $debugger-font;
+      padding-top: 17px;
+      padding-bottom: 20px;
+
+      &:first-of-type {
+        width: 10%;
+        border-left: 1px solid $debugger-font;
+      }
+
+      &:nth-of-type(2) {
+        width: 65%;
+        border-left: 1px solid $debugger-font;
+        border-right: 1px solid $debugger-font;
+      }
+
+      &:nth-of-type(3) {
+        width: 25%;
+        border-right: 1px solid $debugger-font;
+        color: $green;
+      }
+    }
+
+    &:last-of-type {
+      div {
+        border-bottom: 1px solid $debugger-font;
+
+        &:first-of-type {
+          border-radius: 0 0 0 10px;
+        }
+
+        &:last-of-type {
+          border-radius: 0 0 10px 0;
+        }
+
+      }
+    }
+  }
+
+  .right-side {
+    width: 32%;
+
+    & > div {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 30px 25px;
+      border: 1px solid $debugger-font;
+      @include bordex(10px);
+    }
+
+    .btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      font-weight: normal;
+
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+
+    .blue{
+      background-color: $metro-3;
+    }
+
+    .red{
+      background-color: $metro-1;
+    }
+
+    .light-green{
+      background-color: $metro-2;
+    }
+
+
+    .green{
+      background-color: $green;
+    }
+
+    .xls::before {
+      content: '';
+      background: url('../images/icons/icon-xls.svg') center no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: 24px;
+      height: 24px;
+      margin-right: 11px;
+    }
+
+    .pdf::before {
+      content: '';
+      background: url('../images/icons/icon-pdf.svg') center no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      width: 24px;
+      height: 24px;
+      margin-right: 11px;
+    }
+  }
 
 }
 
 // ximg
 
-#about-main .left-side img, .doctor > a > img {
+#about-main .left-side img, .doctor > a > img, #top-item img {
   width: 100%;
   height: 100%;
   transition: all 0.5s 0.02s ease;
