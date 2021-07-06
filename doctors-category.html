@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ветеринарная клиника Синица - страница услуги.</title>
+    <title>Ветеринарная клиника Синица - список докторов.</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -79,175 +79,169 @@
             <div id="breadz">
                 <ul>
                     <li><a href="#">Главная</a></li>
-                    <li><a href="#">Услуги</a></li>
-                    <li><span>Груминг</span></li>
+                    <li><span>Команда</span></li>
                 </ul>
             </div>
-            <h1>Груминг</h1>
+            <h1>Команда</h1>
         </div>
     </setion>
 
-    <section id="service-item">
+    <section id="main-doctors" class="cat-doctors">
         <div class="container">
-            <div class="available">
-                <h4>Услуга доступна в филиалах:</h4>
-                <a href="#">Ленинский</a>
-                <a href="#">Кунцевский</a>
-                <a href="#">Хорошево</a>
+            <div id="doc-catz">
+                <ul>
+                    <li><a href="#" class="active">Доктора</a></li>
+                    <li><a href="#">Ассистенты</a></li>
+                    <li><a href="#">Администраторы</a></li>
+                    <li><a href="#">Грумеры</a></li>
+                </ul>
             </div>
 
-            <div id="top-item">
-                <div class="image">
-                    <img src="./images/service-item.png" alt="service-image">
-                </div>
-                <div class="description">
-                    <div>
-                        <h2>Груминг</h2>
-                        <p>Груминг — это комплекс гигиенических процедур по уходу за шерстью, кожей, ушами, когтями,
-                            глазами
-                            вашего питомца.</p>
-                        <p>Поддержание кожи и шерсти в отличном состоянии — это великолепный внешний
-                            вид и залог здоровья. Уход за кожей и шестью требуется для всех пород
-                            как гладкошёрстных, так и длинношерстных.</p>
-                        <p>В нашей ветеринарной клинике можно получить весь сектор услугу профессионального ухода за
-                            шерстью
-                            вашего любимца.</p>
-                        <p>Наши грумеры имеют большой опыт в стрижке, тримминге, мытье и сушки шерсти большинства видов
-                            животных. По вашим пожеланиям возможны декоративный узор, окрашивание, маникюр и прочее.</p>
 
+            <div class="filter">
+                <form action="">
+                    <div class="field">
+                        <label for="fio">Ф.И.О специалиста</label>
+                        <input type="text" name="" id="fio" placeholder="Введите фамилию специалиста">
                     </div>
 
-                    <div class="btns">
-                        <button class="sign-up btn">Записаться на прием</button>
-                        <button class="consult btn">Онлайн консультирование</button>
+                    <div class="field">
+                        <label for="specialisation">Специализация</label>
+                        <select name="" id="specialisation">
+                            <option value="" default>Не выбрано</option>
+                            <option value="">Специализация 1</option>
+                            <option value="">Специализация 2</option>
+                            <option value="">Специализация 3</option>
+                            <option value="">Специализация 4</option>
+                            <option value="">Специализация 5</option>
+                        </select>
                     </div>
-                </div>
+
+                    <div class="field">
+                        <label for="filial">Специализация</label>
+                        <select name="" id="filial">
+                            <option value="" default>Не выбрано</option>
+                            <option value="">Филиал 1</option>
+                            <option value="">Филиал 2</option>
+                            <option value="">Филиал 3</option>
+                            <option value="">Филиал 4</option>
+                            <option value="">Филиал 5</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn submit">Найти специалиста</button>
+                    <button type="reset" class="btn reset">Сбросить</button>
+                </form>
             </div>
 
-            <div id="sub-item">
-                <div class="left-side">
-                    <div class="table-item">
-                        <h3>
-                            Прейскурант цен на услуги Груминга:
-                        </h3>
-
-                        <div class="table-caption">
-                            <div>№</div>
-                            <div>Услуги для всех пород</div>
-                            <div>Цена/руб.</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>1</div>
-                            <div>Модельное настригание головы</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>2</div>
-                            <div>Окантовка лап</div>
-                            <div>250</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>3</div>
-                            <div>Окантовка ушей</div>
-                            <div>250</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>4</div>
-                            <div>Чистка ушей</div>
-                            <div>250</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>5</div>
-                            <div>Ручная стрижка (без машинки), дополнительно</div>
-                            <div>500</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>6</div>
-                            <div>Подстригиние когтей</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>7</div>
-                            <div>Расчесывание колтунов (30мин)</div>
-                            <div>400</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>8</div>
-                            <div>Гигиена анальных желез</div>
-                            <div>300</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>9</div>
-                            <div>Выстрегание пуделиных лапок</div>
-                            <div>100</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>10</div>
-                            <div>Подщип тримминговочные породы (от объема работ)</div>
-                            <div>400-1500</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>11</div>
-                            <div>Стрижка кота под машинку</div>
-                            <div>1800</div>
-                        </div>
-                    </div>
-
-                    <div class="table-item">
-                        <h3>
-                            SPA-процедуры:
-                        </h3>
-
-                        <div class="table-caption">
-                            <div>№</div>
-                            <div>Маска</div>
-                            <div>Цена/руб.</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>1</div>
-                            <div>Маленькие (до 3-х кг.)</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>2</div>
-                            <div>Средние (от 3-х до 9 кг.)</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>3</div>
-                            <div>Большие (от 9 до 30кг.)</div>
-                            <div>500</div>
-                        </div>
-                    </div>
+            <div class="in-doctors">
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
                 </div>
 
-                <aside class="right-side">
-                    <h3>Скачать Прайс-листы:</h3>
-                    <div>
-                        <a href="#" target="_blank" class="btn blue xls">Прайс общий</a>
-                        <a href="#" target="_blank" class="btn red xls">Прайс филиал Ленинский</a>
-                        <a href="#" target="_blank" class="btn light-green xls">Прайс филиал Хорошево</a>
-                        <a href="#" target="_blank" class="btn blue xls">Прайс филиал Кунцевский</a>
-                        <a href="#" target="_blank" class="btn green pdf">Договор (PDF)</a>
-                    </div>
-                </aside>
-            </div>
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
+                </div>
 
-        </div>
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
+                </div>
+
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
+                </div>
+
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
+                </div>
+
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
+                </div>
+
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
+                </div>
+
+                <div class="doctor">
+                    <a href="#">
+                        <img src="./images/main-docotor.png" alt="doctor">
+                        <h3>Володина Ксения Сергеевна</h3>
+                        <p class="status">
+                            Ветеринарный врач
+                        </p>
+                        <span>
+                            Записаться на прием
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="center">
+                <a href="#" class="readmore">Показать еще врачей</a>
+            </div>
     </section>
 
     <section id="seo-text">

@@ -556,7 +556,7 @@
     }
 });
 
-$('.in-doctors').slick({
+$('#main-doctors .titlex + .in-doctors').slick({
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1

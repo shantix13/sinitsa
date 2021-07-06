@@ -157,9 +157,11 @@ header {
         & > ul {
           position: absolute;
           top: 30px;
-          width: 200px;
+          min-width: 228px;
           text-align: left;
           padding: 20px;
+          display: inline-block;
+          left: 0;
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -210,16 +212,15 @@ header {
 
 #main-services {
 
-  &.cat-services{
-    .center a::after{
-        content: '';
-        background: url("../images/icons/icon-refresh.svg") center no-repeat;
-        width: 16px;
-        height: 16px;
-        margin-left: 20px;
-      }
+  &.cat-services {
+    .center a::after {
+      content: '';
+      background: url("../images/icons/icon-refresh.svg") center no-repeat;
+      width: 16px;
+      height: 16px;
+      margin-left: 20px;
     }
-
+  }
 
   h2 {
     text-align: center;
@@ -430,6 +431,146 @@ header {
 
 #main-doctors {
   padding-top: 100px;
+
+  &.cat-doctors {
+
+    padding-top: 0;
+
+    .center a::after {
+      content: '';
+      background: url("../images/icons/icon-refresh.svg") center no-repeat;
+      width: 16px;
+      height: 16px;
+      margin-left: 20px;
+    }
+
+    .in-doctors {
+      @include grid(4, 1fr, 30px, 30px);
+      margin-right: 0;
+
+      .doctor {
+        margin-right: 0;
+      }
+    }
+
+  }
+
+  #doc-catz ul {
+    @include flex-nowrap;
+    align-items: center;
+    margin-top: 50px;
+
+    li {
+      margin-right: 20px;
+    }
+
+    a {
+      font-size: 14px;
+      border: 1px solid $light-purple;
+      color: $mid-purple;
+      text-decoration: none;
+      @include bordex(10px);
+      padding-top: 14px;
+      padding-bottom: 15px;
+      min-width: 174px;
+      padding-left: 24px;
+      padding-right: 24px;
+      display: block;
+      text-align: center;
+
+      &.active, &:hover {
+        color: #fff;
+        background-color: $green;
+        font-weight: 700;
+      }
+
+    }
+  }
+
+  .filter {
+    background-color: #F9F9F9;
+    @include bordex(10px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    form {
+      @include flex-justify-wrap;
+
+      .field {
+        width: 32%;
+
+      }
+
+      label {
+        font-weight: 500;
+        color: $purple;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      input[type="text"], select {
+        border: 1px solid $light-purple;
+        height: 50px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-left: 20px;
+        width: 100%;
+        @include bordex(10px);
+        font-size: 14px;
+      }
+
+
+      .submit {
+        @include flex-justify-nowrap;
+        align-items: center;
+        background-color: $blue;
+        padding: 14px 30px;
+        height: 50px;
+        margin-top: 20px;
+        margin-right: 20px;
+
+
+        &::after {
+          content: '';
+          background: url('../images/icons/icon-search-white.svg') center no-repeat;
+          width: 16px;
+          height: 16px;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+          margin-left: 15px;
+        }
+      }
+
+
+      .reset {
+        @include flex-justify-nowrap;
+        align-items: center;
+        background-color: $blue;
+        padding: 14px 30px;
+        height: 50px;
+        align-self: flex-start;
+        color: $mid-purple;
+        background-color: $btn-grey;
+        margin-top: 20px;
+        margin-right: auto;
+
+        &::after {
+          content: '';
+          background: url('../images/icons/icon-close.svg') center no-repeat;
+          width: 16px;
+          height: 16px;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
 
   .in-doctors {
     margin-right: -30px;
@@ -711,7 +852,7 @@ header {
     p {
       font-size: 14px;
       color: $purple;
-     // width: 570px;
+      // width: 570px;
     }
 
   }
@@ -1402,14 +1543,12 @@ section .center {
 
       margin-right: 5px;
 
-
-      &:last-of-type{
+      &:last-of-type {
         position: relative;
         top: 1px;
       }
 
-
-      &:last-of-type a {
+      span {
         color: $yellow;
       }
 
@@ -1664,25 +1803,24 @@ section .center {
       margin-bottom: 20px;
       font-weight: normal;
 
-      &:last-of-type{
+      &:last-of-type {
         margin-bottom: 0;
       }
     }
 
-    .blue{
+    .blue {
       background-color: $metro-3;
     }
 
-    .red{
+    .red {
       background-color: $metro-1;
     }
 
-    .light-green{
+    .light-green {
       background-color: $metro-2;
     }
 
-
-    .green{
+    .green {
       background-color: $green;
     }
 
