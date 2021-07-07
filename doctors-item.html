@@ -5,10 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ветеринарная клиника Синица - список докторов.</title>
+    <title>Ветеринарная клиника Синица - страница доктора.</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./js/fancybox/jquery.fancybox-1.3.4.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="./js/fancybox/jquery.fancybox-1.3.4.js"></script>
 </head>
 <body>
 
@@ -79,169 +81,103 @@
             <div id="breadz">
                 <ul>
                     <li><a href="#">Главная</a></li>
-                    <li><span>Команда</span></li>
+                    <li><a href="#">Команда</a></li>
+                    <li><span>Врач Володина Ксения</span></li>
                 </ul>
             </div>
-            <h1>Команда</h1>
+            <h1>Врач Володина Ксения</h1>
         </div>
     </setion>
 
-    <section id="main-doctors" class="cat-doctors">
+    <section id="doctor-item">
         <div class="container">
-            <div id="doc-catz">
-                <ul>
-                    <li><a href="#" class="active">Доктора</a></li>
-                    <li><a href="#">Ассистенты</a></li>
-                    <li><a href="#">Администраторы</a></li>
-                    <li><a href="#">Грумеры</a></li>
-                </ul>
-            </div>
+            <div id="top-item">
+                <div class="image">
+                    <img src="./images/doctor-item.png" alt="service-image">
+                </div>
+                <div class="description">
+
+                    <h2>
+                        Володина Ксения Сергеевна
+                    </h2>
+                    <p class="status">Ветеринарный врач интенсивной терапии, анестезиолог - реаниматолог</p>
 
 
-            <div class="filter">
-                <form action="">
-                    <div class="field">
-                        <label for="fio">Ф.И.О специалиста</label>
-                        <input type="text" name="" id="fio" placeholder="Введите фамилию специалиста">
+                    <div class="btns">
+                        <button class="sign-up btn">Записаться на прием</button>
+                        <button class="shedule btn">Посмотреть расписание</button>
                     </div>
 
-                    <div class="field">
-                        <label for="specialisation">Специализация</label>
-                        <select name="" id="specialisation">
-                            <option value="" default>Не выбрано</option>
-                            <option value="">Специализация 1</option>
-                            <option value="">Специализация 2</option>
-                            <option value="">Специализация 3</option>
-                            <option value="">Специализация 4</option>
-                            <option value="">Специализация 5</option>
-                        </select>
+                    <div class="about-block">
+                        <div>
+                            <h2>О себе:</h2>
+                            <p>Сторонник концепции доказательной медицины.
+                                «Безумно люблю животных. У меня лучшая работа в мире!»</Б.
+
+                            <h2>Образование:</h2>
+                            <p>2007г. - окончила с красным дипломом Московскую Государственную Академию Ветеринарной
+                                Медицины и Биотехнологии им. К.И. Скрябина.</p>
+                        </div>
+                        <div>
+                            <h2>Образование:</h2>
+                            <p>
+                                2007г. - окончила с красным дипломом Московскую Государственную Академию Ветеринарной
+                                Медицины и Биотехнологии им. К.И. Скрябина.
+                            </p>
+                        </div>
                     </div>
-
-                    <div class="field">
-                        <label for="filial">Филиал</label>
-                        <select name="" id="filial">
-                            <option value="" default>Не выбрано</option>
-                            <option value="">Филиал 1</option>
-                            <option value="">Филиал 2</option>
-                            <option value="">Филиал 3</option>
-                            <option value="">Филиал 4</option>
-                            <option value="">Филиал 5</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn submit">Найти специалиста</button>
-                    <button type="reset" class="btn reset">Сбросить</button>
-                </form>
-            </div>
-
-            <div class="in-doctors">
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
-                </div>
-
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
-                </div>
-
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
-                </div>
-
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
-                </div>
-
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
-                </div>
-
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
-                </div>
-
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
-                </div>
-
-                <div class="doctor">
-                    <a href="#">
-                        <img src="./images/main-docotor.png" alt="doctor">
-                        <h3>Володина Ксения Сергеевна</h3>
-                        <p class="status">
-                            Ветеринарный врач
-                        </p>
-                        <span>
-                            Записаться на прием
-                        </span>
-                    </a>
                 </div>
             </div>
-            <div class="center">
-                <a href="#" class="readmore">Показать еще врачей</a>
+
+            <div id="sub-item">
+                <div class="left-side">
+                    <h3>Опыт работы:</h3>
+                    <ul>
+                        <li>2006 - 2010 гг- ветеринарный врач ВК «Дарвин»;</li>
+                        <li>2007 - 2008гг - Главный врач Скорая ветеринарная помощь «ЭнималСервис»;</li>
+                        <li>Параллельно оказывала помощь в лечении диких животных
+                            в Благотворительном фонде защиты животных «Бим»;
+                        </li>
+                        <li>2011 - 2014 гг - ветеринарный врач ВК «СДМ»;</li>
+                        <li>2014 - 2018 гг ветеринарный врач ОРИТ, анестезиолог;</li>
+                        <li>2018 - 2020 гг - ветеринарный врач интенсивной терапии
+                            «ОРИТ» Ветеринарный Центр;
+                        </li>
+                        <li>2020-2021гг - ветеринарный врач интенсивной терапии, анестезиолог - реаниматологСВЦ «Свой
+                            Доктор»;
+                        </li>
+                        <li>С 2021г по настоящее время - ветеринарный врач интенсивной терапии, анестезиолог -
+                            реаниматолог
+                            СВК «Синица».
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right-side">
+                    <h3>Дополнительное образование по специализациям:</h2>
+                        <ul>
+                            <li>- клиническая неврология,</li>
+                            <li>- интенсивная терапия,</li>
+                            <li>- анестезиология,</li>
+                            <li>- реанимация.</li>
+                            <li>Регулярно проходит курсы повышения квалификации, посещает ветеринарные конгрессы,
+                                международные конференции и семинары.
+                            </li>
+                        </ul>
+                </div>
             </div>
+
+            <div class="certz">
+                <h3>Сертификаты:</h3>
+                <div class="in-certz">
+                    <a href="./images/certs/cert-1.png" rel="cert-gallery"><img src="./images/certs/cert-1.png" alt="cert"></a>
+                    <a href="./images/certs/cert-2.png" rel="cert-gallery"><img src="./images/certs/cert-2.png" alt="cert"></a>
+                    <a href="./images/certs/cert-3.png" rel="cert-gallery"><img src="./images/certs/cert-3.png" alt="cert"></a>
+                    <a href="./images/certs/cert-4.png" rel="cert-gallery"><img src="./images/certs/cert-4.png" alt="cert"></a>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <section id="seo-text">

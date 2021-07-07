@@ -684,3 +684,8 @@ $('img.img-svg').each(function () {
         $img.replaceWith($svg);
     }, 'xml');
 });
+
+
+$(document).ready(function() {
+    $(".in-certz a, .in-photos a").fancybox();
+});

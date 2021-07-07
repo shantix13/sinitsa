@@ -1724,10 +1724,171 @@ section .center {
       height: 24px;
       margin-right: 11px; }
 
-#about-main .left-side img, .doctor > a > img, #top-item img {
+#doctor-item {
+  margin-top: 78px; }
+  #doctor-item .image img {
+    border: 1px solid #E4E4E4;
+    border-radius: 10px;
+    padding: 10px; }
+  #doctor-item .description h2 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 25px; }
+  #doctor-item .description .status {
+    font-size: 18px;
+    font-weight: 500;
+    color: #9E9E9E; }
+  #doctor-item #top-item .description .btns {
+    border: none;
+    padding-left: 0;
+    padding-top: 0;
+    margin-top: 50px; }
+    #doctor-item #top-item .description .btns .shedule {
+      background-color: #00A993; }
+      #doctor-item #top-item .description .btns .shedule::after {
+        content: '';
+        background: url(../images/icons/icon-calendar.svg) center no-repeat;
+        width: 18px;
+        height: 16px;
+        margin-left: 10px;
+        display: block;
+        -webkit-background-size: 100%;
+        background-size: 100%; }
+  #doctor-item .about-block {
+    border: 1px solid #E4E4E4;
+    border-radius: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 30px; }
+    #doctor-item .about-block > div {
+      margin-bottom: 30px; }
+    #doctor-item .about-block h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 500; }
+      #doctor-item .about-block h2::last-of-type {
+        margin-top: 30px; }
+    #doctor-item .about-block p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px; }
+  #doctor-item #sub-item > div {
+    border: 1px solid #E4E4E4;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 10px;
+    width: 49%; }
+  #doctor-item #sub-item h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px; }
+  #doctor-item #sub-item li {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px; }
+
+.certz {
+  margin-top: 50px; }
+
+.certz h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px; }
+
+.in-certz {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+  .in-certz img {
+    border: 1px solid #E4E4E4;
+    border-radius: 10px; }
+
+#ck-filialz {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+  #ck-filialz .filial {
+    width: 370px; }
+    #ck-filialz .filial .btn {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px; }
+    #ck-filialz .filial.red .locator {
+      background-color: #AD2720; }
+    #ck-filialz .filial.red .caller {
+      background-color: #D14A43; }
+    #ck-filialz .filial.red .addr {
+      margin-bottom: 38px; }
+    #ck-filialz .filial.green .locator {
+      background-color: #3F888C; }
+    #ck-filialz .filial.green .caller {
+      background-color: #5CA9AD; }
+    #ck-filialz .filial.blue .locator {
+      background-color: #00568D; }
+    #ck-filialz .filial.blue .caller {
+      background-color: #0172BA; }
+  #ck-filialz .in-filial {
+    border-left: 1px solid #E4E4E4;
+    border-right: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    border-radius: 0 0 10px 10px;
+    padding-left: 30px;
+    padding-right: 30px; }
+    #ck-filialz .in-filial .phone {
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 30px; }
+    #ck-filialz .in-filial .locator {
+      margin-bottom: 15px; }
+      #ck-filialz .in-filial .locator::after {
+        content: '';
+        background: url("../images/icons/icon-locate-right.svg") center no-repeat;
+        width: 11px;
+        height: 16px;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        margin-left: 15px; }
+    #ck-filialz .in-filial .caller {
+      margin-bottom: 20px; }
+      #ck-filialz .in-filial .caller::after {
+        content: '';
+        background: url("../images/icons/icon-phone-3.svg") center no-repeat;
+        width: 16px;
+        height: 16px;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        margin-left: 15px; }
+
+#sub-ck h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  margin-top: 50px; }
+#sub-ck p {
+  line-height: 38px;
+  font-size: 18px;
+  font-weight: 400; }
+  #sub-ck p a {
+    color: #0078B2;
+    text-decoration: none; }
+    #sub-ck p a:hover {
+      text-decoration: underline; }
+
+#about-main .left-side img, .doctor > a > img, #top-item img, #doctor-item .image img, .certz img {
   width: 100%;
   height: 100%;
   transition: all 0.5s 0.02s ease; }
+
+.certz img:hover {
+  opacity: 0.7; }
 
 .slick-slider {
   position: relative;
