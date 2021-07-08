@@ -556,6 +556,8 @@
     }
 });
 
+
+// Инициализируем слайдеры и карусели
 $('#main-doctors .titlex + .in-doctors').slick({
     infinite: true,
     slidesToShow: 4,
@@ -568,7 +570,7 @@ $('.in-partners').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     dots: true,
-    arrows: false
+    arrows: true
 });
 
 
@@ -593,6 +595,7 @@ $('#slider .container').slick({
 });
 
 
+// Открываем попапы по кликам
 $('.mail').click(function () {
     $('#mail-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
     return false;
@@ -616,6 +619,8 @@ $('.cross').click(function () {
 //     return false;
 // });
 
+
+// Закрываем попапы по кнопке закрыть
 $('.closer').click(function () {
     $('.former').animate({'opacity': '0'}, 600, function () {
         $('.former').css({'display': 'none'});
@@ -623,6 +628,7 @@ $('.closer').click(function () {
     });
 });
 
+// Закрываем попапы по кнопке escape
 $(document).keydown(function (e) {
     if (e.keyCode === 27) {
         $('.former').animate({'opacity': '0'}, 600, function () {
@@ -649,6 +655,7 @@ $(document).keydown(function (e) {
 // });
 
 
+// Добавляем триггер на кнопки каруселей
 $('#main-doctors .left-btn').on('click', function () {
     $('#main-doctors .slick-prev').trigger('click');
 });
@@ -666,26 +673,46 @@ $('#main-gallery .right-btn').on('click', function () {
     $('#main-gallery .slick-next').trigger('click');
 });
 
+$('#main-deserts .left-btn').on('click', function () {
+    $('#main-deserts .slick-prev').trigger('click');
+});
 
-// Добавляем возможность менять цвет svg
-$('img.img-svg').each(function () {
-    var $img = $(this);
-    var imgClass = $img.attr('class');
-    var imgURL = $img.attr('src');
-    $.get(imgURL, function (data) {
-        var $svg = $(data).find('svg');
-        if (typeof imgClass !== 'undefined') {
-            $svg = $svg.attr('class', imgClass + ' replaced-svg');
-        }
-        $svg = $svg.removeAttr('xmlns:a');
-        if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-        }
-        $img.replaceWith($svg);
-    }, 'xml');
+$('#main-deserts .right-btn').on('click', function () {
+    $('#main-deserts .slick-next').trigger('click');
 });
 
 
+
+$('#main-partners .left-btn').on('click', function () {
+    $('#main-partners .slick-prev').trigger('click');
+});
+
+$('#main-partners .right-btn').on('click', function () {
+    $('#main-partners .slick-next').trigger('click');
+});
+
+
+
+
+// // Добавляем возможность менять цвет svg
+// $('img.img-svg').each(function () {
+//     var $img = $(this);
+//     var imgClass = $img.attr('class');
+//     var imgURL = $img.attr('src');
+//     $.get(imgURL, function (data) {
+//         var $svg = $(data).find('svg');
+//         if (typeof imgClass !== 'undefined') {
+//             $svg = $svg.attr('class', imgClass + ' replaced-svg');
+//         }
+//         $svg = $svg.removeAttr('xmlns:a');
+//         if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+//             $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+//         }
+//         $img.replaceWith($svg);
+//     }, 'xml');
+// });
+
+// Инициализируем fancybox
 $(document).ready(function() {
     $(".in-certz a, .in-photos a").fancybox();
 });
