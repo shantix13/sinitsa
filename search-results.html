@@ -5,15 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ветеринарная клиника Синица - страница услуги.</title>
+    <title>Ветеринарная клиника Синица - страница О нас.</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 </head>
 <body>
-
 <header>
-
     <div id="top">
         <div class="container">
             <div class="socials">
@@ -26,7 +26,6 @@
 
 
             <div class="right-side">
-
                 <div class="mail">
                     <a href="mailto:info@sinicavet.ru">info@sinicavet.ru</a>
                 </div>
@@ -79,190 +78,48 @@
             <div id="breadz">
                 <ul>
                     <li><a href="#">Главная</a></li>
-                    <li><a href="#">Услуги</a></li>
-                    <li><span>Груминг</span></li>
+                    <li><span>Результаты поиска</span></li>
                 </ul>
             </div>
-            <h1>Груминг</h1>
+            <h1>Результаты поиска</h1>
         </div>
     </setion>
 
-    <section id="service-item">
+    <section id="search-page">
         <div class="container">
-            <div class="available">
-                <h4>Услуга доступна в филиалах:</h4>
-                <a href="#">Ленинский</a>
-                <a href="#">Кунцевский</a>
-                <a href="#">Хорошево</a>
-            </div>
-
-            <div id="top-item">
-                <div class="image">
-                    <img src="./images/service-item.png" alt="service-image">
-                </div>
-                <div class="description">
-                    <div>
-                        <h2>Груминг</h2>
-                        <p>Груминг — это комплекс гигиенических процедур по уходу за шерстью, кожей, ушами, когтями,
-                            глазами
-                            вашего питомца.</p>
-                        <p>Поддержание кожи и шерсти в отличном состоянии — это великолепный внешний
-                            вид и залог здоровья. Уход за кожей и шестью требуется для всех пород
-                            как гладкошёрстных, так и длинношерстных.</p>
-                        <p>В нашей ветеринарной клинике можно получить весь сектор услугу профессионального ухода за
-                            шерстью
-                            вашего любимца.</p>
-                        <p>Наши грумеры имеют большой опыт в стрижке, тримминге, мытье и сушки шерсти большинства видов
-                            животных. По вашим пожеланиям возможны декоративный узор, окрашивание, маникюр и прочее.</p>
-
+            <div class="search-form">
+                <form action="">
+                    <label for="searcher"></label>
+                    <input type="search" name="" id="searcher">
+                    <button type="submit">Найти</button>
+                </form>
+                <div class="search-results">
+                    <div class="search-count">
+                        Найдено 3 совпадения:
                     </div>
 
-                    <div class="btns">
-                        <button class="sign-up btn">Записаться на прием</button>
-                        <button class="consult btn">Онлайн консультирование</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="sub-item">
-                <div class="left-side">
-                    <div class="table-item">
-                        <h3>
-                            Прейскурант цен на услуги Груминга:
-                        </h3>
-
-                        <div class="table-caption">
-                            <div>№</div>
-                            <div>Услуги для всех пород</div>
-                            <div>Описание</div>
-                            <div>Цена/руб.</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>1</div>
-                            <div>Модельное настригание головы</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>2</div>
-                            <div>Окантовка лап</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>250</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>3</div>
-                            <div>Окантовка ушей</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>250</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>4</div>
-                            <div>Чистка ушей</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>250</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>5</div>
-                            <div>Ручная стрижка (без машинки), дополнительно</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>500</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>6</div>
-                            <div>Подстригиние когтей</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>7</div>
-                            <div>Расчесывание колтунов (30мин)</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>400</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>8</div>
-                            <div>Гигиена анальных желез</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>300</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>9</div>
-                            <div>Выстрегание пуделиных лапок</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>100</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>10</div>
-                            <div>Подщип тримминговочные породы (от объема работ)</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>400-1500</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>11</div>
-                            <div>Стрижка кота под машинку</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>1800</div>
-                        </div>
+                    <div class="search-item">
+                        <h2>Груминг услуги</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus vitae egestas non hendrerit. Tellus suscipit a quis orci tellus sit est cras. Non nibh in pellentesque libero lorem lorem. Nibh malesuada viverra feugiat neque, scelerisque
+                        </p>
                     </div>
 
-                    <div class="table-item">
-                        <h3>
-                            SPA-процедуры:
-                        </h3>
+                    <div class="search-item">
+                        <h2>Груминг цены</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus vitae egestas non hendrerit. Tellus suscipit a quis orci tellus sit est cras. Non nibh in pellentesque libero lorem lorem. Nibh malesuada viverra feugiat neque, scelerisque
+                        </p>
+                    </div>
 
-                        <div class="table-caption">
-                            <div>№</div>
-                            <div>Маска</div>
-                            <div>Описание</div>
-                            <div>Цена/руб.</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>1</div>
-                            <div>Маленькие (до 3-х кг.)</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>2</div>
-                            <div>Средние (от 3-х до 9 кг.)</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>350</div>
-                        </div>
-
-                        <div class="table-row">
-                            <div>3</div>
-                            <div>Большие (от 9 до 30кг.)</div>
-                            <div>Тут будет описание данной услуги</div>
-                            <div>500</div>
-                        </div>
+                    <div class="search-item">
+                        <h2>Груминг услуги</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus vitae egestas non hendrerit. Tellus suscipit a quis orci tellus sit est cras. Non nibh in pellentesque libero lorem lorem. Nibh malesuada viverra feugiat neque, scelerisque
+                        </p>
                     </div>
                 </div>
-
-                <aside class="right-side">
-                    <h3>Скачать документы:</h3>
-                    <div>
-                        <a href="#" target="_blank" class="btn blue xls">Прайс общий</a>
-                        <a href="#" target="_blank" class="btn red xls">Прайс филиал Ленинский</a>
-                        <a href="#" target="_blank" class="btn light-green xls">Прайс филиал Хорошево</a>
-                        <a href="#" target="_blank" class="btn blue xls">Прайс филиал Кунцевский</a>
-                        <a href="#" target="_blank" class="btn green pdf">Договор (PDF)</a>
-                    </div>
-                </aside>
             </div>
-
         </div>
     </section>
 
