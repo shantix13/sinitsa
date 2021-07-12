@@ -8,7 +8,7 @@
     <title>Ветеринарная клиника Синица - список докторов.</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 </head>
 <body>
 
@@ -46,7 +46,7 @@
             <a href="/" class="logo">
                 <img src="./images/logo.svg" alt="logo">
             </a>
-
+            <button class="menu-trigger"></button>
             <nav>
                 <ul>
                     <li><a href="/">Главная</a></li>
@@ -101,32 +101,48 @@
             <div class="filter">
                 <form action="">
                     <div class="field">
-                        <label for="fio">Ф.И.О специалиста</label>
+                        <div class="field-label">Ф.И.О специалиста</div>
                         <input type="text" name="" id="fio" placeholder="Введите фамилию специалиста">
                     </div>
 
                     <div class="field">
-                        <label for="specialisation">Специализация</label>
-                        <select name="" id="specialisation">
-                            <option value="" default>Не выбрано</option>
-                            <option value="">Специализация 1</option>
-                            <option value="">Специализация 2</option>
-                            <option value="">Специализация 3</option>
-                            <option value="">Специализация 4</option>
-                            <option value="">Специализация 5</option>
-                        </select>
+                        <div class="field-label">Специализация</div>
+                        <div class="select" id="select-1">
+                            <div class="select__backdrop" data-select="backdrop"></div>
+
+                            <button type="button" class="select__trigger" data-select="trigger">
+                                Выберите из списка
+                            </button>
+
+                            <div class="select__dropdown">
+                                <ul class="select__items">
+                                    <li class="select__item" data-select="item">Специализация 1</li>
+                                    <li class="select__item select__item_selected" data-select="item">Специализация 2</li>
+                                    <li class="select__item" data-select="item">Специализация 3</li>
+                                    <li class="select__item" data-select="item">Специализация 4</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="field">
-                        <label for="filial">Филиал</label>
-                        <select name="" id="filial">
-                            <option value="" default>Не выбрано</option>
-                            <option value="">Филиал 1</option>
-                            <option value="">Филиал 2</option>
-                            <option value="">Филиал 3</option>
-                            <option value="">Филиал 4</option>
-                            <option value="">Филиал 5</option>
-                        </select>
+                        <div class="field-label">Филиал</div>
+                        <div class="select" id="select-2">
+                            <div class="select__backdrop" data-select="backdrop"></div>
+
+                            <button type="button" class="select__trigger" data-select="trigger">
+                                Выберите из списка
+                            </button>
+
+                            <div class="select__dropdown">
+                                <ul class="select__items">
+                                    <li class="select__item" data-select="item">Филиал 1</li>
+                                    <li class="select__item select__item_selected" data-select="item">Филиал 2</li>
+                                    <li class="select__item" data-select="item">Филиал 3</li>
+                                    <li class="select__item" data-select="item">Филиал 4</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn submit">Найти специалиста</button>

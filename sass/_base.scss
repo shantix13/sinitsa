@@ -128,4 +128,12 @@ button, .btn{
   display: inline-block;
   @include bordex(10px);
   color: #fff;
+  transition: all 0.4s 0.02s ease;
+  opacity: 1;
+
+  &:hover{
+    opacity: 0.8;
+  }
 }
+
+

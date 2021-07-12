@@ -248,6 +248,7 @@ header {
 
   p {
     text-align: center;
+    font-size: 18px;
   }
 
   .in-services {
@@ -503,13 +504,13 @@ header {
       .field {
         width: 32%;
 
-      }
+        &-label {
+          font-weight: 500;
+          color: $purple;
+          margin-bottom: 10px;
+          display: block;
+        }
 
-      label {
-        font-weight: 500;
-        color: $purple;
-        margin-bottom: 10px;
-        display: block;
       }
 
       input[type="text"], select {
@@ -577,7 +578,7 @@ header {
     font-weight: 800;
     color: $purple;
     font-size: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 
     span {
       color: $green
@@ -586,7 +587,7 @@ header {
 
   p {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
     color: $mid-purple;
     margin-bottom: 30px;
   }
@@ -1142,6 +1143,7 @@ footer {
       color: #fff;
       @include bordex(10px);
       margin-top: 30px;
+      transition: all 0.4s 0.02s ease;
 
       &::after {
         content: '';
@@ -1152,6 +1154,10 @@ footer {
         width: 20px;
         height: 16px;
         margin-left: 10px;
+      }
+
+      &:hover {
+        opacity: 0.8;
       }
     }
 
@@ -1579,6 +1585,11 @@ section .center {
 
 .title-block .container {
   background-color: $blue;
+  background-image: url('../images/pattern-1.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  background-position: center;
   padding-top: 28px;
   padding-bottom: 38px;
   padding-left: 20px;
@@ -1611,11 +1622,12 @@ section .center {
 
       &:last-of-type {
         position: relative;
-        top: 1px;
+        top: 2px;
       }
 
       span {
         color: $yellow;
+        font-size: 16px;
       }
 
       &::after {
@@ -2051,7 +2063,7 @@ section .center {
 .in-certz {
   //@include flex-justify-nowrap;
 
-  a{
+  a {
     margin-right: 30px;
   }
 
@@ -2589,7 +2601,6 @@ section .center {
   }
 }
 
-
 .search-results {
   .search-count {
     color: $grey;
@@ -2598,17 +2609,17 @@ section .center {
     margin-bottom: 50px;
   }
 
-  .search-item{
+  .search-item {
 
     margin-bottom: 50px;
 
-    h2{
+    h2 {
       font-size: 18px;
       font-weight: 700;
       margin-bottom: 15px;
     }
 
-    p{
+    p {
       font-weight: 400;
       line-height: 24px;
       font-size: 14px;
@@ -2616,21 +2627,21 @@ section .center {
   }
 }
 
-#error-404{
+#error-404 {
   background: url('../images/error-404-left.jpg') left bottom no-repeat,
   url('../images/error-404-right.jpg') right top no-repeat;
   height: 100vh;
   position: relative;
 }
 
-.block-404{
+.block-404 {
 
   position: absolute;
   right: 10%;
   top: 20%;
   text-align: center;
 
-  h1{
+  h1 {
     font-size: 200px;
     font-weight: 900;
     text-align: center;
@@ -2638,7 +2649,7 @@ section .center {
     line-height: 251px;
   }
 
-  h2{
+  h2 {
     font-size: 36px;
     text-align: center;
     font-weight: 700;
@@ -2646,7 +2657,7 @@ section .center {
     line-height: 45px;
   }
 
-  button{
+  button {
     font-size: 14px;
     text-align: center;
     width: 240px;
@@ -2658,8 +2669,7 @@ section .center {
     justify-content: center;
     align-items: center;
 
-
-    &::before{
+    &::before {
       content: '';
       background: url('../images/icons/white-arrow.svg') center no-repeat;
       width: 24px;
@@ -2789,6 +2799,1563 @@ section .center {
 
 .slick-arrow.slick-hidden, #main-doctors .slick-arrow, #main-gallery .slick-arrow, #main-partners .slick-arrow, .in-certz button {
   display: none !important;
+}
+
+.menu-trigger {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 23px;
+  width: 22px;
+  height: 15px;
+  cursor: pointer;
+  background: url('../images/icons/icon-menu.svg') center no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+// Select
+
+.select {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.select__trigger {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid $debugger-font;
+  @include bordex(10px);
+  cursor: pointer;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.4;
+  user-select: none;
+  justify-content: space-between;
+  height: 50px;
+  color: $purple;
+  font-weight: normal;
+}
+
+.select__trigger::after {
+  content: '';
+  width: 0.75rem;
+  height: 0.75rem;
+  background-size: cover;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="100" width="100"%3E%3Cpath d="M97.625 25.3l-4.813-4.89c-1.668-1.606-3.616-2.41-5.84-2.41-2.27 0-4.194.804-5.777 2.41L50 52.087 18.806 20.412C17.223 18.805 15.298 18 13.03 18c-2.225 0-4.172.804-5.84 2.41l-4.75 4.89C.813 26.95 0 28.927 0 31.23c0 2.346.814 4.301 2.439 5.865l41.784 42.428C45.764 81.174 47.689 82 50 82c2.268 0 4.215-.826 5.84-2.476l41.784-42.428c1.584-1.608 2.376-3.563 2.376-5.865 0-2.26-.792-4.236-2.375-5.932z"/%3E%3C/svg%3E');
+}
+
+.select__trigger:focus {
+  outline: none;
+}
+
+.select_show .select__trigger::after {
+  transform: rotate(180deg);
+}
+
+.select__dropdown {
+  display: none;
+  position: absolute;
+  top: 49px;
+  left: 0;
+  right: 0;
+  border: 1px solid $debugger-font;
+  max-height: 10rem;
+  overflow-y: auto;
+  @include bordex(10px);
+  background-color: #fff;
+}
+
+.select_show .select__dropdown {
+  display: block;
+}
+
+.select_show .select__backdrop {
+  display: block;
+}
+
+.select__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.select__item {
+  padding: 0.375rem 0.75rem;
+}
+
+.select__item_selected {
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.select__item:hover {
+  background-color: $blue;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.2s background-color ease-in-out;
+}
+
+.select__backdrop {
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  background-color: transparent;
+}
+
+// Adaptive Styles
+
+@media(max-width: 1210px) {
+  .container {
+    width: 1070px;
+  }
+
+  .doctor h3{
+    min-height: 74px;
+    margin-top: 10px;
+    margin-bottom: 9px;
+    line-height: 22px;
+  }
+
+  #error-404 {
+    background-size: 420px, 180px;
+  }
+
+  #ck-filialz .filial.red .addr {
+    margin-bottom: 20px;
+  }
+
+  #doctor-item {
+    margin-top: 72px;
+  }
+
+  #slider .slide-content {
+    left: 50px;
+    top: 50px;
+  }
+
+  #slider .top-block {
+    padding-top: 7px;
+    padding-bottom: 9px;
+  }
+
+  #top-item .description > div:first-of-type {
+    padding-bottom: 25px;
+    padding-right: 25px;
+  }
+
+  #main-partners {
+    margin-top: 120px;
+  }
+
+  #seo-text {
+    margin-top: 90px;
+  }
+
+  #main-gallery, #main-deserts, #main-doctors {
+    padding-top: 90px;
+  }
+
+  h1, .title-block .container h1, #slider .slide-content h2, .block-404 h2 {
+    font-size: 35px;
+  }
+
+  #sub-top nav > ul > li {
+    padding-right: 38px;
+  }
+
+  #main-services .in-services .in-service h3 {
+    top: 28px;
+    left: 28px;
+    font-size: 19px;
+  }
+
+  #main-services .in-services .in-service .readmore {
+    left: 28px;
+    bottom: 28px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2 {
+    font-size: 29px;
+    padding-bottom: 18px;
+  }
+
+  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+    font-size: 17px;
+    padding-bottom: 19px;
+  }
+
+  #doctor-item .description .status {
+    font-size: 17px;
+  }
+
+  #main-advantages .in-advantages {
+    margin-top: 28px;
+  }
+
+  #main-advantages {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  #doctor-item #top-item .description .btns {
+    margin-top: 46px;
+  }
+
+  #ck-filialz, #search-page, #main-services .in-services, #main-doctors #doc-catz ul, .available, #about .about-top {
+    margin-top: 43px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 48px;
+  }
+
+}
+
+@media(max-width: 1110px) {
+  .container {
+    width: 970px;
+  }
+
+  #ck-filialz .in-filial .phone {
+    margin-bottom: 10px;
+  }
+
+  #top-item .description > div:first-of-type {
+    padding-bottom: 22px;
+    padding-right: 22px;
+  }
+
+  .filial .messenger {
+    margin-bottom: 10px;
+  }
+
+  #ck-filialz .in-filial {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #doctor-item {
+    margin-top: 66px;
+  }
+
+  #main-partners {
+    margin-top: 110px;
+  }
+
+  #main-gallery, #main-deserts, #main-doctors {
+    padding-top: 80px;
+  }
+
+  #seo-text {
+    margin-top: 85px;
+  }
+
+  #sub-top nav > ul > li {
+    padding-right: 33px;
+  }
+
+  #sub-top nav {
+    right: 50px;
+  }
+
+  h1, .title-block .container h1, #slider .slide-content h2, .block-404 h2 {
+    font-size: 34px;
+  }
+
+  #main-services .in-services .in-service h3 {
+    top: 26px;
+    left: 26px;
+    font-size: 18px;
+  }
+
+  #main-services .in-services .in-service .readmore {
+    left: 26px;
+    bottom: 26px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2 {
+    font-size: 28px;
+    padding-bottom: 16px;
+  }
+
+  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+    font-size: 16px;
+    padding-bottom: 18x;
+  }
+
+  #main-advantages .in-advantages {
+    margin-top: 26px;
+  }
+
+  #main-advantages {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #slider .slide-content {
+    left: 35px;
+    top: 35px;
+  }
+
+  #slider .slide-content h2 {
+    line-height: 35px;
+  }
+
+  #slider .top-block {
+    font-size: 22px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-bottom: 15px;
+  }
+
+  #slider .slide-content h2 {
+    margin-bottom: 20px;
+  }
+
+  #slider .slide-content a {
+    margin-top: 25px;
+  }
+
+  #doctor-item .description h2 {
+    font-size: 23px;
+    margin-bottom: 23px;
+  }
+
+  #doctor-item .description .status {
+    font-size: 16px;
+  }
+
+  #doctor-item #top-item .description .btns {
+    margin-top: 42px;
+  }
+
+  #ck-filialz, #search-page, #main-services .in-services, #main-doctors #doc-catz ul, .available, #about .about-top {
+    margin-top: 38px;
+  }
+
+  #sub-ck h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    margin-top: 16px;
+  }
+
+  #sub-ck p {
+    line-height: 39px;
+    font-size: 18px;
+  }
+
+  .title-block .container {
+    padding-top: 25px;
+    padding-bottom: 30px
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 45px;
+  }
+
+  #main-doctors .filter{
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+}
+
+@media(max-width: 1030px) {
+  .container {
+    width: 870px;
+  }
+
+  #main-doctors.cat-doctors .in-doctors{
+    grid-gap: 20px;
+  }
+
+  .doctor h3{
+    font-size: 15px;
+    min-height: 72px;
+    margin-top: 5px;
+    margin-bottom: 4px;
+    line-height: 21px;
+  }
+
+  #main-doctors p{
+    margin-bottom: 10px;
+  }
+
+  #ck-filialz .filial .btn {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  #doctor-item #top-item .description .btns {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+
+  #ck-filialz .in-filial .locator {
+    margin-bottom: 12px;
+  }
+
+  #top-item .description > div:first-of-type {
+    padding-bottom: 20px;
+    padding-right: 20px;
+  }
+
+  #doctor-item {
+    margin-top: 62px;
+  }
+
+  #doctor-item #top-item .description .btns .btn {
+    width: 250px;
+    padding: 14px 25px;
+  }
+
+  #doctor-item #top-item .description .btns .sign-up {
+    margin-bottom: 20px;
+  }
+
+  #main-partners {
+    margin-top: 100px;
+  }
+
+  #slider .top-block {
+    font-size: 21px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    margin-bottom: 13px;
+  }
+
+  #slider .slick-dots {
+    bottom: 20px;
+    left: 35px;
+  }
+
+  #slider .slide-content {
+    width: 390px;
+  }
+
+  #slider .slide-content h2 {
+    margin-bottom: 15px;
+  }
+
+  #slider .slide-content a {
+    margin-top: 20px;
+  }
+
+  #slider .slide-content h2 {
+    line-height: 33px;
+  }
+
+  #seo-text {
+    margin-top: 80px;
+  }
+
+  #main-gallery, #main-deserts, #main-doctors {
+    padding-top: 70px;
+  }
+
+  #main-advantages .in-advantages .advantage p {
+    margin-left: 18px;
+    line-height: 20px;
+  }
+
+  h1, .title-block .container h1, #slider .slide-content h2, .block-404 h2 {
+    font-size: 32px;
+  }
+
+  #main-services .in-services .in-service h3 {
+    top: 24px;
+    left: 24px;
+    font-size: 17px;
+  }
+
+  #main-services .in-services .in-service .readmore {
+    left: 24px;
+    bottom: 24px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2 {
+    font-size: 27px;
+    padding-bottom: 14px;
+  }
+
+  #main-services h2::before {
+    width: 24px;
+    height: 18px;
+    margin-bottom: 6px;
+  }
+
+  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+    font-size: 15px;
+    padding-bottom: 15px;
+  }
+
+  #main-advantages .in-advantages {
+    margin-top: 24px;
+  }
+
+  #main-advantages {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  #doctor-item .description h2 {
+    font-size: 22px;
+    margin-bottom: 21px;
+  }
+
+  #doctor-item #top-item .description .btns {
+    margin-top: 39px;
+  }
+
+  .certz {
+    margin-top: 28px;
+  }
+
+  #ck-filialz, #search-page, #main-services .in-services, #main-doctors #doc-catz ul, .available, #about .about-top {
+    margin-top: 35px;
+  }
+
+  #sub-ck h3 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    margin-top: 13px;
+  }
+
+  #sub-ck p {
+    line-height: 39px;
+    font-size: 18px;
+  }
+
+  .title-block .container {
+    padding-top: 23px;
+    padding-bottom: 28px
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 40px;
+  }
+
+  .block-404 h1 {
+    font-size: 190px;
+  }
+
+  #main-doctors .filter{
+    margin-top: 27px;
+    margin-bottom: 27px;
+  }
+}
+
+@media(max-width: 905px) {
+  .container {
+    width: 95%;
+  }
+
+  #main-doctors.cat-doctors .in-doctors{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .doctor h3{
+    min-height: 55px;
+  }
+
+  #main-doctors #doc-catz ul a {
+    min-width: 160px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #breadz ul a, #breadz ul li span {
+    font-size: 15px;
+  }
+
+  #error-404 {
+    background-size: 320px, 140px;
+  }
+
+  #breadz ul li:last-of-type {
+    top: 3px;
+  }
+
+  .filial h4 {
+    padding-top: 10px;
+    padding-bottom: 11px;
+  }
+
+  #ck-filialz .filial {
+    margin-right: 20px;
+  }
+
+  #top-item .description > div:first-of-type {
+    padding-bottom: 18px;
+    padding-right: 18px;
+  }
+
+  #doctor-item .description .status {
+    font-size: 15px;
+  }
+
+  #doctor-item {
+    margin-top: 58px;
+  }
+
+  #main-partners {
+    margin-top: 90px;
+  }
+
+  #slider .slide-content {
+    left: 25px;
+    top: 25px;
+  }
+
+  #slider .top-block {
+    font-size: 20px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    margin-bottom: 11px;
+  }
+
+  #slider .slick-dots {
+    bottom: 35px;
+    left: 25px;
+  }
+
+  #slider .slide-content h2 {
+    margin-bottom: 11px;
+    line-height: 31px;
+  }
+
+  #slider .slide-content a {
+    margin-top: 15px;
+  }
+
+  #main-gallery, #main-deserts, #main-doctors {
+    padding-top: 60px;
+  }
+
+  #seo-text {
+    margin-top: 75px;
+  }
+
+  #main-services .in-services .in-service h3 {
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+  }
+
+  #main-advantages .in-advantages .advantage {
+    width: 32.3%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 13px;
+  }
+
+  #main-advantages .in-advantages .advantage p {
+    line-height: 18px;
+  }
+
+  h1, .title-block .container h1, #slider .slide-content h2, .block-404 h2 {
+    font-size: 29px;
+  }
+
+  #sub-top nav > ul > li {
+    padding-right: 29px;
+  }
+
+  #sub-top nav > ul a {
+    font-size: 15px;
+  }
+
+  #main-services .in-services .in-service .readmore {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2 {
+    font-size: 26px;
+    padding-bottom: 12px;
+  }
+
+  #main-services h2::before {
+    width: 22px;
+    height: 17px;
+    margin-bottom: 6px;
+  }
+
+  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+    font-size: 14px;
+    padding-bottom: 16px;
+  }
+
+  #main-advantages .in-advantages {
+    margin-top: 22px;
+  }
+
+  #main-advantages {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  #doctor-item .description h2 {
+    font-size: 21px;
+    margin-bottom: 19px;
+  }
+
+  #doctor-item #top-item .description .btns {
+    margin-top: 36px;
+  }
+
+  .certz {
+    margin-top: 26px;
+  }
+
+  #ck-filialz, #search-page, #main-services .in-services, #main-doctors #doc-catz ul, .available, #about .about-top {
+    margin-top: 32px;
+  }
+
+  #sub-ck h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  #sub-ck p {
+    line-height: 36px;
+    font-size: 17px;
+  }
+
+  .title-block .container {
+    padding-top: 21px;
+    padding-bottom: 25px
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 36px;
+  }
+
+  .block-404 h1 {
+    font-size: 180px;
+  }
+
+  #main-doctors .filter{
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+@media(max-width: 805px) {
+  #top .mail {
+    width: 170px;
+  }
+
+  #main-doctors #doc-catz ul a {
+    min-width: 160px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .doctor h3{
+    font-size: 14px;
+  }
+
+  #main-doctors #doc-catz ul li {
+    margin-right: 15px;
+  }
+
+  #sub-ck p {
+    line-height: 28px;
+    font-size: 16px;
+  }
+
+  #error-404 {
+    background-size: 250px, 120px;
+  }
+
+  .title-block .container {
+    padding-top: 19px;
+    padding-bottom: 22px
+  }
+
+  #ck-filialz {
+    flex-wrap: wrap;
+  }
+
+  #ck-filialz .filial {
+    width: 48%;
+    margin-right: 0;
+    padding-bottom: 25px;
+  }
+
+  #sub-ck h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  #ck-filialz .filial.red .addr {
+    margin-bottom: 40px;
+  }
+
+  .locator, .caller {
+    display: none !important;
+  }
+
+  .filial .messenger {
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+  }
+
+  #sub-item {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #doctor-item #sub-item > div {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #doctor-item .description .status {
+    font-size: 14px;
+  }
+
+  #doctor-item {
+    margin-top: 50px;
+  }
+
+  #slider .slick-dots {
+    bottom: 15px;
+    left: 20px;
+  }
+
+  #slider .top-block {
+    font-size: 19px;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  #slider .slide-content h2 {
+    line-height: 28px;
+  }
+
+  #slider .slide-content {
+    left: 20px;
+    top: 20px;
+  }
+
+  #slider .slide-content p {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  #slider .slick-dots {
+    bottom: 25px;
+  }
+
+  #slider .slide-content a {
+    padding-top: 14px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 14px;
+  }
+
+  #main-partners {
+    margin-top: 80px;
+  }
+
+  #seo-text {
+    margin-top: 70px;
+  }
+
+  #main-gallery, #main-deserts, #main-doctors {
+    padding-top: 55px;
+  }
+
+  #main-advantages .in-advantages .advantage {
+    width: 49%;
+  }
+
+  #main-advantages .in-advantages {
+    margin-top: 20px;
+  }
+
+  #main-services .in-services {
+    grid-gap: 20px;
+  }
+
+  #sub-top {
+    height: 70px;
+  }
+
+  #sub-top .logo {
+    width: 122px;
+  }
+
+  #sub-top .logo img {
+    width: 100%;
+    height: auto;
+  }
+
+  #top .city a {
+    padding: 15px 23px;
+    padding-right: 19px;
+  }
+
+  #top .city {
+    text-align: right;
+    width: 120px;
+  }
+
+  #top .phone {
+    margin-left: 13px;
+  }
+
+  h1, .title-block .container h1, #slider .slide-content h2 {
+    font-size: 26px;
+  }
+
+  #sub-top nav > ul a {
+    font-size: 14px;
+  }
+
+  #sub-top nav {
+    margin-top: 22px;
+  }
+
+  #sub-top .search {
+    right: 2px;
+    top: 22px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2 {
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+
+  #main-services h2::before {
+    width: 20px;
+    height: 16px;
+  }
+
+  #main-advantages {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  #doctor-item .description h2 {
+    font-size: 19px;
+    margin-bottom: 16px;
+  }
+
+  #doctor-item #top-item .description .btns {
+    margin-top: 33px;
+  }
+
+  #top-item .description > div:first-of-type {
+    padding-bottom: 15px;
+    padding-right: 15px;
+  }
+
+  .certz {
+    margin-top: 23px;
+  }
+
+  #ck-filialz, #search-page, #main-services .in-services, #main-doctors #doc-catz ul, .available, #about .about-top {
+    margin-top: 28px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 33px;
+  }
+
+  .block-404 h1 {
+    font-size: 170px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 9px;
+  }
+
+  #main-doctors .filter{
+    margin-top: 23px;
+    margin-bottom: 23px;
+  }
+}
+
+@media(max-width: 770px) {
+  h1, .title-block .container h1 {
+    font-size: 24px;
+  }
+
+  .doctor > a{
+    padding: 5px;
+  }
+
+  .doctor span{
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  #main-doctors .filter{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #breadz ul a, #breadz ul li span {
+    font-size: 14px;
+  }
+
+  #main-doctors .filter form .field {
+    width: 48%;
+    margin-bottom: 15px;
+  }
+
+  #main-doctors .filter form .field:nth-child(3n) {
+    page-break-after: always;
+  }
+
+  #sub-ck p {
+    line-height: 26px;
+    font-size: 15px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 30px;
+  }
+
+  .block-404 h1 {
+    font-size: 160px;
+  }
+
+  #ck-filialz, #search-page, #main-services .in-services, #main-doctors #doc-catz ul, .available, #about .about-top {
+    margin-top: 25px;
+  }
+
+  .certz {
+    margin-top: 20px;
+  }
+
+  #doctor-item #top-item .description .btns {
+    margin-top: 30px;
+  }
+
+  #doctor-item {
+    margin-top: 44px;
+  }
+
+  #slider .top-block {
+    font-size: 17px;
+  }
+
+  #main-partners {
+    margin-top: 70px;
+  }
+
+  #slider .slide-content {
+    width: 328px;
+  }
+
+  #slider .slide-content h2 {
+    line-height: 27px;
+  }
+
+  #slider .slide-content h2 {
+    margin-bottom: 9px;
+  }
+
+  #main-services h2::before {
+    width: 18px;
+    height: 15px;
+    margin-bottom: 5px;
+  }
+
+  #main-services .in-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #sub-top nav > ul > li {
+    padding-right: 25px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2, #slider .slide-content h2, .block-404 h2 {
+    font-size: 24px;
+  }
+
+  #doctor-item .description h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 8px;
+  }
+
+}
+
+@media(max-width: 705px) {
+  nav {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .doctor span::after{
+    display: none;
+  }
+
+  #main-doctors #doc-catz ul {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #main-doctors #doc-catz ul li {
+    margin-right: 0;
+    width: 48%;
+    margin-bottom: 20px;
+  }
+
+  #main-doctors #doc-catz ul a {
+    width: 100%;
+  }
+
+  h1, .title-block .container h1 {
+    font-size: 23px;
+  }
+
+  #sub-ck p {
+    font-size: 14px;
+  }
+
+  #ck-filialz .filial.red .addr {
+    margin-bottom: 20px;
+  }
+
+  #ck-filialz .in-filial .phone {
+    float: none;
+  }
+
+  #doctor-item {
+    margin-top: 38px;
+  }
+
+  #main-partners {
+    margin-top: 60px;
+  }
+
+  .menu-trigger {
+    display: block;
+  }
+
+  #sub-top .logo {
+    position: relative;
+    top: 17px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 0;
+  }
+
+  #main-advantages {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2, #slider .slide-content h2, .block-404 h2 {
+    font-size: 23px;
+  }
+
+  .title-block .container {
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 7px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 29px;
+  }
+}
+
+@media(max-width: 605px) {
+  #top {
+    height: 100px;
+  }
+
+  #main-doctors.cat-doctors .in-doctors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #main-doctors .filter form{
+    justify-content: space-between;
+  }
+
+  .doctor h3{
+    font-size: 13px;
+  }
+
+  #main-doctors .filter form .submit{
+    width: 48%;
+    margin-right: 0;
+    text-align: center;
+    justify-content: center;
+    margin-right: 4%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #main-doctors .filter form .reset{
+    width: 48%;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #main-doctors .filter form input[type="text"], #main-doctors .filter form select, .select__trigger {
+    height: 47px;
+  }
+
+  #main-doctors .filter form .field {
+    width: 100%;
+  }
+
+  .select__dropdown{
+    top: 45px;
+  }
+
+  .search-results .search-item h2 {
+    font-size: 17px;
+    margin-bottom: 13px;
+  }
+
+  #breadz ul a, #breadz ul li span {
+    font-size: 13px;
+  }
+
+  h1, .title-block .container h1 {
+    font-size: 22px;
+  }
+
+  #top .socials {
+    top: 68px;
+    left: 15px;
+  }
+
+  #top .socials ul li {
+    margin-right: 20px;
+  }
+
+  #top .right-side {
+    width: 100%;
+  }
+
+  #top .container {
+    width: 100%;
+  }
+
+  #top .city {
+    left: 0;
+    position: absolute;
+  }
+
+  #main-advantages {
+    padding-top: 37px;
+    padding-bottom: 37px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2, #slider .slide-content h2, .block-404 h2 {
+    font-size: 22px;
+  }
+
+  .title-block .container {
+    padding-top: 15px;
+    padding-bottom: 17px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 6px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 28px;
+  }
+}
+
+@media(max-width: 505px) {
+  #ck-filialz .filial {
+    width: 100%;
+  }
+
+  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+    font-size: 13px;
+    padding-bottom: 12px;
+  }
+
+  .doctor span{
+    font-size: 13px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  #main-doctors .filter form .submit{
+    width: 49%;
+    margin-right: 2%;
+  }
+
+  #main-doctors .filter form .reset{
+    width: 49%;
+  }
+
+  #main-doctors .filter {
+    padding: 25px;
+  }
+
+  .search-results .search-item p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  h1, .title-block .container h1 {
+    font-size: 21px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2, #slider .slide-content h2, .block-404 h2 {
+    font-size: 21px;
+  }
+
+  .title-block .container {
+    padding-top: 15px;
+    padding-bottom: 17px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 5px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 26px;
+  }
+
+  .search-form form label {
+    display: none;
+  }
+
+  .search-form form input[type="search"] {
+    padding-left: 10px;
+  }
+}
+
+@media(max-width: 455px) {
+  .title-block .container {
+    padding-top: 14px;
+    padding-bottom: 16px;
+  }
+
+  #main-doctors #doc-catz ul a {
+    padding-top: 10px;
+    padding-bottom: 12px;
+    font-size: 13px;
+  }
+
+  #main-doctors .filter form .submit{
+    font-size: 13px;
+  }
+
+  #main-doctors .filter form .reset{
+    font-size: 13px;
+  }
+
+  #main-doctors .filter form .submit::after, #main-doctors .filter form .reset::after{
+    margin-left: 8px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 4px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 24px;
+  }
+}
+
+@media(max-width: 405px) {
+  h1, .title-block .container h1 {
+    font-size: 20px;
+  }
+
+  #main-doctors .filter form .submit, #main-doctors .filter form .reset{
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .doctor h3{
+    font-size: 12px;
+    margin-top: 2px;
+    line-height: 18px;
+  }
+
+  .doctor span{
+    margin-top: 10px;
+  }
+
+
+  #main-doctors .filter {
+    padding: 20px;
+  }
+
+  #main-doctors .filter form .field-label {
+    font-size: 13px;
+    margin-bottom: 7px;
+  }
+
+  #main-doctors p{
+    margin-bottom: 0;
+  }
+
+  .search-form form button[type="submit"] {
+    background: #0078B2 url('../images/icons/icon-search-white.svg') center no-repeat;
+    text-indent: -9999px;
+    width: 40px;
+  }
+
+  #breadz ul li::after {
+    font-size: 19px;
+    top: 4px;
+  }
+
+  #breadz ul a, #breadz ul li span {
+    font-size: 12px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2, #slider .slide-content h2, .block-404 h2 {
+    font-size: 20px;
+  }
+
+  .title-block .container {
+    padding-top: 13px;
+    padding-bottom: 15px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 3px;
+  }
+
+  .search-results .search-item h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .search-results .search-count, .search-results .search-item, .search-item p {
+    margin-bottom: 22px;
+  }
+}
+
+@media(max-width: 365px) {
+  h1, .title-block .container h1 {
+    font-size: 19px;
+  }
+
+  #main-doctors .filter form .reset {
+    width: 41%;
+  }
+
+  #main-doctors .filter form .submit {
+    width: 57%;
+  }
+
+  #main-doctors.cat-doctors .in-doctors {
+    grid-gap: 10px;
+  }
+
+
+  #main-doctors .filter form .field-label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  #main-doctors #doc-catz ul li {
+    margin-bottom: 15px;
+  }
+
+  #main-doctors #doc-catz ul a {
+    padding-top: 8px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    min-width: auto;
+  }
+
+  .search-results .search-item p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .search-results .search-count {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .search-results .search-count, .search-results .search-item {
+    margin-bottom: 20px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2, #slider .slide-content h2, .block-404 h2 {
+    font-size: 19px;
+  }
+
+  .title-block .container {
+    padding-top: 12px;
+    padding-bottom: 14px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 2px;
+  }
+}
+
+@media(max-width: 325px) {
+  h1, .title-block .container h1 {
+    font-size: 18px;
+  }
+
+  .doctor span {
+    padding-top: 11px;
+    padding-bottom: 9px;
+  }
+
+  #main-services h2, #main-advantages h2, #main-doctors h2, #main-gallery h2, #main-deserts h2, #about-main .container .right-side h2, #slider .slide-content h2, .block-404 h2 {
+    font-size: 18px;
+  }
+
+  .title-block .container {
+    padding-top: 11px;
+    padding-bottom: 13px;
+  }
+
+  .title-block .container h1 {
+    padding-top: 0;
+  }
 }
 
 
