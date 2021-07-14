@@ -218,8 +218,10 @@ class CustomSelect {
         if (this._config.data) {
             this._render();
         }
-        this._$trigger = this._$main.querySelector('[data-select="trigger"]');
-        this._addEventListener();
+        if(this._$main != null) {
+            this._$trigger = this._$main.querySelector('[data-select="trigger"]');
+            this._addEventListener();
+        }
     }
     _isShow() {
         return this._$main.classList.contains('select_show');
@@ -319,7 +321,23 @@ const select2 = new CustomSelect('#select-2');
 $('#main-doctors .titlex + .in-doctors').slick({
     infinite: true,
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 710,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 410,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 
 
@@ -328,7 +346,16 @@ $('.in-partners').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     dots: true,
-    arrows: true
+    arrows: true,
+    responsive: [
+        {
+            breakpoint: 710,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 
 
@@ -338,6 +365,22 @@ $('.in-photos').slick({
     slidesToScroll: 1,
     arrows: true,
     dots: true,
+    responsive: [
+        {
+            breakpoint: 710,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 410,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 
 
@@ -402,10 +445,10 @@ $('.cross').click(function () {
 });
 
 
-// $('.locate').click(function () {
-//     $('#feedback-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
-//     return false;
-// });
+$('.locate').click(function () {
+    $('#locate-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
+    return false;
+});
 
 
 // Закрываем попапы по кнопке закрыть
@@ -508,4 +551,38 @@ $('img.img-svg').each(function () {
         }
         $img.replaceWith($svg);
     }, 'xml');
+});
+
+
+
+// Триггерим мобильное меню
+
+$('.menu-trigger').click(function () {
+    if (!($(this).hasClass('is-active'))) {
+        $('nav').css({'height': 'auto'}, 500);
+        $(this).addClass('is-active');
+        return false;
+    }
+    else {
+        $('nav').animate({'height': '0'}, 500);
+        $(this).removeClass('is-active');
+        return false;
+    }
+});
+
+//Триггерим поиск в хедере
+
+$('.search > button').click(function () {
+    if (!($(this).hasClass('is-active'))) {
+        $('.search').css({'height': 'auto', 'width' : '80%'}, 500);
+        $(this).addClass('is-active');
+        $('#sub-top .search').addClass('search-active');
+        return false;
+    }
+    else {
+        $('.search').css({'height': '0', 'width' : '100%'}, 500);
+        $('#sub-top .search').removeClass('search-active');
+        $(this).removeClass('is-active');
+        return false;
+    }
 });

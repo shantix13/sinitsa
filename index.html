@@ -2,12 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ветеринарная клиника Синица- главная.</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 
@@ -70,7 +71,42 @@
             </nav>
 
             <div class="search">
-                <a href="#"><img src="./images/icons/icon-search.svg" alt="search"></a>
+                <button><img src="./images/icons/icon-search.svg" alt="search"></button>
+                <div class="search-field">
+
+                    <input type="search" name="" id="">
+                </div>
+
+                <div class="search-results">
+                    <div class="search-item">
+                        <div class="in-search-item">
+                            <h3><a href="#">Груминг услуги</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus vitae egestas non
+                                hendrerit...</p>
+                        </div>
+                        <a href="#">Перейти</a>
+                    </div>
+
+                    <div class="search-item">
+                        <div class="in-search-item">
+                            <h3><a href="#">Груминг цены</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus vitae egestas non
+                                hendrerit...</p>
+                        </div>
+                        <a href="#">Перейти</a>
+                    </div>
+
+                    <div class="search-item">
+                        <div class="in-search-item">
+                            <h3><a href="#">Груминг цены</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus vitae egestas non
+                                hendrerit...</p>
+                        </div>
+                        <a href="#">Перейти</a>
+                    </div>
+
+                    <a href="#" class="btn">Показать все результаты</a>
+                </div>
             </div>
         </div>
     </div>
@@ -325,7 +361,8 @@
                 </div>
 
                 <div class="titlex-btns">
-                    <button class="left-btn"><img src="./images/icons/icon-btn-arrow.svg" alt="arrow" class="img-svg"></button>
+                    <button class="left-btn"><img src="./images/icons/icon-btn-arrow.svg" alt="arrow" class="img-svg">
+                    </button>
                     <button class="right-btn">
                         <svg width="10" height="18" viewBox="0 0 10 18">
                             <path d="M0.210982 8.50605L8.77524 0.20355C9.05583 -0.0683121 9.51013 -0.0678551 9.79026 0.204956C10.0702 0.477733 10.0694 0.91961 9.78881 1.19168L1.73433 9.00003L9.7891 16.8083C10.0697 17.0805 10.0704 17.5221 9.79055 17.7949C9.65012 17.9316 9.46615 18 9.28219 18C9.09869 18 8.91544 17.9321 8.77527 17.7963L0.210982 9.49398C0.0758371 9.36327 0 9.18538 0 9.00003C0 8.81469 0.0760546 8.63701 0.210982 8.50605Z">
@@ -404,38 +441,60 @@
             </div>
     </section>
 
-    <section id="main-partners">
+    <section id="main-partners" class="about-partners">
         <div class="container">
-            <h2><span>Наши</span> партнеры</h2>
-            <p>Мы сотрудничаем с различными волонтерскими движениями и фондами</p>
+            <div class="titlex">
+                <div class="in-titlex">
+                    <h2><span>Наши</span> партнеры</h2>
+                    <p>
+                        Мы сотрудничаем с различными волонтерскими движениями и фондами
+                    </p>
+                </div>
+
+                <div class="titlex-btns">
+                    <button class="left-btn">
+                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="img-svg">
+                            <path d="M0.210982 8.50605L8.77524 0.20355C9.05583 -0.0683121 9.51013 -0.0678551 9.79026 0.204956C10.0702 0.477733 10.0694 0.91961 9.78881 1.19168L1.73433 9.00003L9.7891 16.8083C10.0697 17.0805 10.0704 17.5221 9.79055 17.7949C9.65012 17.9316 9.46615 18 9.28219 18C9.09869 18 8.91544 17.9321 8.77527 17.7963L0.210982 9.49398C0.0758371 9.36327 0 9.18538 0 9.00003C0 8.81469 0.0760546 8.63701 0.210982 8.50605Z"
+                                  fill="#9E9E9E"/>
+                        </svg>
+                    </button>
+                    <button class="right-btn">
+                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.210982 8.50605L8.77524 0.20355C9.05583 -0.0683121 9.51013 -0.0678551 9.79026 0.204956C10.0702 0.477733 10.0694 0.91961 9.78881 1.19168L1.73433 9.00003L9.7891 16.8083C10.0697 17.0805 10.0704 17.5221 9.79055 17.7949C9.65012 17.9316 9.46615 18 9.28219 18C9.09869 18 8.91544 17.9321 8.77527 17.7963L0.210982 9.49398C0.0758371 9.36327 0 9.18538 0 9.00003C0 8.81469 0.0760546 8.63701 0.210982 8.50605Z"
+                                  fill="#9E9E9E"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
             <div class="in-partners">
                 <div class="partner">
-                        <img src="./images/partners/partner-1.png" alt="partner">
+                    <img src="./images/partners/partner-1.png" alt="partner">
                 </div>
 
                 <div class="partner">
-                        <img src="./images/partners/partner-2.png" alt="partner">
+                    <img src="./images/partners/partner-2.png" alt="partner">
                 </div>
 
                 <div class="partner">
-                        <img src="./images/partners/partner-3.png" alt="partner">
+                    <img src="./images/partners/partner-3.png" alt="partner">
                 </div>
 
                 <div class="partner">
-                        <img src="./images/partners/partner-4.png" alt="partner">
+                    <img src="./images/partners/partner-4.png" alt="partner">
                 </div>
 
                 <div class="partner">
-                        <img src="./images/partners/partner-3.png" alt="partner">
+                    <img src="./images/partners/partner-3.png" alt="partner">
                 </div>
 
                 <div class="partner">
-                        <img src="./images/partners/partner-2.png" alt="partner">
+                    <img src="./images/partners/partner-2.png" alt="partner">
                 </div>
 
                 <div class="partner">
-                        <img src="./images/partners/partner-1.png" alt="partner">
+                    <img src="./images/partners/partner-1.png" alt="partner">
                 </div>
             </div>
         </div>
@@ -547,21 +606,6 @@
 </main>
 <footer>
     <div class="container">
-        <a href="/" id="bottom-logo"><img src="./images/bottom-logo.svg" alt="logo"></a>
-
-        <p id="sub-logo">
-            Наши ветеринарные клиники – место, где с порога или с первого звонка<br>
-            вы попадаете в приятную, дружескую обстановку.<br>
-            Мы - на стороне добра и радости.<br>
-            На одной волне с людьми<br>
-            и животными.
-        </p>
-
-        <ul id="bottom-socials">
-            <li><a href="#" target="_blank"><img src="./images/icons/icon-fb-2.svg" alt="social"></a></li>
-            <li><a href="#" target="_blank"><img src="./images/icons/icon-insta-2.svg" alt="social"></a></li>
-            <li><a href="#" target="_blank"><img src="./images/icons/icon-vk-2.svg" alt="social"></a></li>
-        </ul>
         <div id="filialz">
             <div class="filial red">
                 <h4>Филиал Ленинский</h4>
@@ -642,6 +686,22 @@
                 </div>
             </div>
         </div>
+
+        <a href="/" id="bottom-logo"><img src="./images/bottom-logo.svg" alt="logo"></a>
+
+        <p id="sub-logo">
+            Наши ветеринарные клиники – место, где с порога или с первого звонка<br>
+            вы попадаете в приятную, дружескую обстановку.<br>
+            Мы - на стороне добра и радости.<br>
+            На одной волне с людьми<br>
+            и животными.
+        </p>
+
+        <ul id="bottom-socials">
+            <li><a href="#" target="_blank"><img src="./images/icons/icon-fb-2.svg" alt="social"></a></li>
+            <li><a href="#" target="_blank"><img src="./images/icons/icon-insta-2.svg" alt="social"></a></li>
+            <li><a href="#" target="_blank"><img src="./images/icons/icon-vk-2.svg" alt="social"></a></li>
+        </ul>
     </div>
 
     <div id="debugger">
@@ -710,7 +770,8 @@
 
             <div class="field required">
                 <label for="your-phone-mail">Контактный телефон</label>
-                <div class="phoner"><input type="text" name="" id="your-phone-mail" placeholder="Контактный телефон" required></div>
+                <div class="phoner"><input type="text" name="" id="your-phone-mail" placeholder="Контактный телефон"
+                                           required></div>
             </div>
 
             <div class="field">
@@ -751,7 +812,8 @@
 
             <div class="field required">
                 <label for="your-phone-consult">Контактный телефон</label>
-                <div class="phoner"><input type="text" name="" id="your-phone-consult" placeholder="Контактный телефон" required></div>
+                <div class="phoner"><input type="text" name="" id="your-phone-consult" placeholder="Контактный телефон"
+                                           required></div>
             </div>
 
             <div class="field">
@@ -810,7 +872,8 @@
 
             <div class="field required">
                 <label for="your-phone-mail-doc">Контактный телефон</label>
-                <div class="phoner"><input type="text" name="" id="your-phone-mail-doc" placeholder="Контактный телефон" required></div>
+                <div class="phoner"><input type="text" name="" id="your-phone-mail-doc" placeholder="Контактный телефон"
+                                           required></div>
             </div>
 
             <div class="field">
@@ -837,7 +900,8 @@
 
             <div class="field required">
                 <label for="your-phone-feed">Контактный телефон</label>
-                <div class="phoner"><input type="text" name="" id="your-phone-feed" placeholder="Контактный телефон" required></div>
+                <div class="phoner"><input type="text" name="" id="your-phone-feed" placeholder="Контактный телефон"
+                                           required></div>
             </div>
 
             <div class="field">
@@ -862,7 +926,33 @@
 <!-- Попап успешно отправленной формы -->
 <div class="former" id="success-form">
     <div class="container">
-        <h2>Спасибо! Данные отправлены.</h2>
+        <h2>Ваша заявка принята!</h2>
+        <p>
+            Наш менеджер свяжется с Вами в ближайщее время!
+        </p>
+        <span class="closer"></span>
+    </div>
+</div>
+
+<!-- Попап местоположения -->
+<div class="former" id="locate-form">
+    <div class="container">
+        <h2>Как добраться?</h2>
+        <div class="locate">
+            г. Москва, ул.Маршала Неделина д.16, стр.5, МЦД Рабочий поселок
+        </div>
+
+        <p>На общественном транспорте:</p>
+        <p class="strong">от м. «Кунцевская»: выход №1 автобусы №16, 178 - проехать до остановки «Кунцевский рынок».
+            Выйдя из автобуса,
+            перейти дорогу и пройти по прямой в глубь жилого массива 200 метров.</p>
+        <p class="strong">от МЦД «Рабочий посёлок»: выход №3 пройти 550 метров вдоль улицы Маршала Неделина до остановки
+            «Кунцевский
+            рынок». Перейти дорогу и пройти по прямой в глубь жилого массива ещё 200 метров.</p>
+        <p class="strong">от м. «Молодёжная» выход №1 пройти до остановки «Метро Молодёжная» автобус № 554 - - проехать
+            до остановки
+            «Кунцевский рынок». Выйдя из автобуса, перейти дорогу и пройти по прямой в глубь жилого массива 200
+            метров.</p>
         <span class="closer"></span>
     </div>
 </div>
