@@ -321,20 +321,20 @@ const select2 = new CustomSelect('#select-2');
 $('#main-doctors .titlex + .in-doctors').slick({
     infinite: true,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     responsive: [
         {
             breakpoint: 710,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 1
+                slidesToScroll: 3
             }
         },
         {
             breakpoint: 410,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 1
+                slidesToScroll: 2
             }
         }
     ]
@@ -523,7 +523,7 @@ $('.certz .left-btn').on('click', function () {
     $('.certz .slick-prev').trigger('click');
 });
 
-$('#.certz .right-btn').on('click', function () {
+$('.certz .right-btn').on('click', function () {
     $('.certz .slick-next').trigger('click');
 });
 
@@ -556,7 +556,6 @@ $('img.img-svg').each(function () {
 
 
 // Триггерим мобильное меню
-
 $('.menu-trigger').click(function () {
     if (!($(this).hasClass('is-active'))) {
         $('nav').css({'height': 'auto'}, 500);
@@ -571,7 +570,6 @@ $('.menu-trigger').click(function () {
 });
 
 //Триггерим поиск в хедере
-
 $('.search > button').click(function () {
     if (!($(this).hasClass('is-active'))) {
         $('.search').css({'height': 'auto', 'width' : '80%'}, 500);
@@ -579,10 +577,17 @@ $('.search > button').click(function () {
         $('#sub-top .search').addClass('search-active');
         return false;
     }
-    else {
-        $('.search').css({'height': '0', 'width' : '100%'}, 500);
-        $('#sub-top .search').removeClass('search-active');
-        $(this).removeClass('is-active');
-        return false;
-    }
+});
+
+// Клик вне поиска закрывает его.
+$(function ($) {
+    $(document).mouseup(function (e) {
+        var div = $("#sub-top .search");
+        if (!div.is(e.target) && div.has(e.target).length === 0) {
+            $('#sub-top .search').css({'width': '20px', 'height' : '20px'});
+            $('#sub-top .search').removeClass('search-active');
+            $('.search > button').removeClass('is-active');
+            return false;
+        }
+    });
 });

@@ -589,7 +589,9 @@ header {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         padding-left: 30px;
-        padding-right: 30px; }
+        padding-right: 30px;
+        left: 31px;
+        top: 140px; }
         #sub-top .search .search-item .in-search-item + a {
           text-decoration: none;
           font-size: 14px;
@@ -836,13 +838,15 @@ header {
     box-sizing: border-box;
     padding: 30px;
     margin-top: 30px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    position: relative;
+    height: 230px; }
     #main-doctors .filter form {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between; }
       #main-doctors .filter form .field {
-        width: 32%; }
+        width: 350px; }
         #main-doctors .filter form .field-label {
           font-weight: 500;
           color: #26304B;
@@ -866,8 +870,10 @@ header {
         background-color: #0078B2;
         padding: 14px 30px;
         height: 50px;
-        margin-top: 20px;
-        margin-right: 20px; }
+        margin-right: 20px;
+        position: absolute;
+        top: 140px;
+        left: 30px; }
         #main-doctors .filter form .submit::after {
           content: '';
           background: url("../images/icons/icon-search-white.svg") center no-repeat;
@@ -887,8 +893,10 @@ header {
         align-self: flex-start;
         color: #9E9E9E;
         background-color: #f0f0f0;
-        margin-top: 20px;
-        margin-right: auto; }
+        margin-right: auto;
+        position: absolute;
+        left: 300px;
+        top: 140px; }
         #main-doctors .filter form .reset::after {
           content: '';
           background: url("../images/icons/icon-close.svg") center no-repeat;
@@ -897,6 +905,12 @@ header {
           -webkit-background-size: 100%;
           background-size: 100%;
           margin-left: 15px; }
+  #main-doctors #title-search .fieldm, #main-doctors #title-search {
+    width: 350px !important; }
+  #main-doctors .filter-block {
+    float: right; }
+    #main-doctors .filter-block .field:first-of-type {
+      margin-right: 30px; }
   #main-doctors .in-doctors {
     margin-right: -30px; }
   #main-doctors h2 {
@@ -2661,9 +2675,60 @@ section .center {
   display: none;
   background-color: transparent; }
 
+#about-main .left-side img {
+  height: 100%; }
+
+@media (max-width: 1610px) {
+  #seo-text .container {
+    width: 1440px; } }
+@media (max-width: 1510px) {
+  #seo-text .container {
+    width: 1370px; }
+
+  #about-main .container .right-side {
+    width: 760px; } }
+@media (max-width: 1410px) {
+  #about-main .container, #seo-text .container {
+    width: 1300px; }
+
+  #seo-text .right-side {
+    width: 47%; }
+
+  #about-main .container .right-side {
+    width: 700px; } }
+@media (max-width: 1370px) {
+  #about-main .container, #seo-text .container {
+    width: 1200px; }
+
+  #about-main .container .right-side {
+    width: 600px; } }
+@media (max-width: 1310px) {
+  #about-main .container, #seo-text .container {
+    width: 1100px; }
+
+  #about-main .container .right-side {
+    width: 480px; }
+
+  .about-icons {
+    padding-bottom: 20px; }
+
+  .about-list li {
+    margin-bottom: 17px; } }
 @media (max-width: 1210px) {
   .container {
     width: 1070px; }
+
+  #about-main .container, #seo-text .container {
+    width: 1000px; }
+
+  #about-main .container .left-side {
+    width: 470px;
+    overflow: hidden; }
+
+  #about-main .left-side img {
+    width: 568px;
+    height: auto !important;
+    vertical-align: top; }
 
   #filialz {
     left: 0;
@@ -2786,7 +2851,11 @@ section .center {
     margin-bottom: 47px; }
 
   .sinitsa .image img {
-    width: 470px; } }
+    width: 470px; }
+
+  #seo-text .container h2 {
+    margin-top: 44px;
+    font-size: 29px; } }
 @media (max-width: 1110px) {
   .container {
     width: 970px; }
@@ -2960,10 +3029,40 @@ section .center {
     padding-bottom: 46px; }
 
   .sinitsa .desc .item {
-    margin-bottom: 33px; } }
+    margin-bottom: 33px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 29px;
+    margin-bottom: 23px;
+    padding-bottom: 0; }
+
+  .about-list {
+    margin-top: 15px; }
+
+  .about-list li {
+    margin-bottom: 15px; }
+
+  #about-main .container, #about-main .container {
+    width: 1000px; }
+
+  #seo-text .container h2 {
+    margin-top: 40px;
+    font-size: 28px; } }
 @media (max-width: 1030px) {
   .container {
     width: 870px; }
+
+  #seo-text .container {
+    width: 940px; }
+
+  #seo-text .container h2 {
+    margin-top: 40px; }
+
+  #about-main .container .left-side {
+    width: 400px; }
+
+  #about-main .container .right-side {
+    width: 565px; }
 
   .sinitsa .desc .item {
     margin-bottom: 30px; }
@@ -3183,10 +3282,44 @@ section .center {
 
   .sinitsa .desc h3 {
     font-size: 17px;
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 27px;
+    margin-bottom: 21px;
+    padding-bottom: 0; }
+
+  #about-main .container, #seo-text .container {
+    width: 900px; }
+
+  #about-main .container .right-side {
+    width: 464px; }
+
+  #seo-text .container h2 {
+    margin-top: 38px;
+    font-size: 27px; } }
 @media (max-width: 905px) {
   .container {
     width: 95%; }
+
+  #about-main .container .right-side {
+    width: 58%; }
+
+  #about-main .left-side img {
+    width: 568px;
+    height: auto !important;
+    vertical-align: top;
+    position: relative;
+    left: -35%; }
+
+  #about-main .container .left-side {
+    width: 40%; }
+
+  .about-list li {
+    margin-bottom: 13px;
+    font-size: 15px;
+    background-size: 20px;
+    padding-left: 30px; }
 
   #right-icons i {
     width: 60px;
@@ -3444,7 +3577,20 @@ section .center {
     margin-bottom: 18px; }
 
   #about .about-top .about-desc h2 {
-    margin-bottom: 18px; } }
+    margin-bottom: 18px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 26px;
+    margin-bottom: 19px;
+    padding-bottom: 0; }
+
+  #about-main .container, #seo-text .container {
+    width: 95%;
+    margin: 0 auto; }
+
+  #seo-text .container h2 {
+    margin-top: 36px;
+    font-size: 26px; } }
 @media (max-width: 805px) {
   #top .mail {
     width: 170px; }
@@ -3732,10 +3878,36 @@ section .center {
     margin-bottom: 23px; }
 
   #about .about-top .about-desc h2 {
-    margin-bottom: 15px; } }
+    margin-bottom: 15px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 25px;
+    margin-bottom: 17px;
+    padding-bottom: 0; }
+
+  .about-icons img {
+    width: 30px; }
+
+  .about-icons li:last-of-type img {
+    width: 23px; }
+
+  #seo-text .container h2 {
+    margin-top: 33px;
+    font-size: 25px; } }
 @media (max-width: 770px) {
   h1, .title-block .container h1 {
     font-size: 24px; }
+
+  #seo-text .container h2 {
+    margin-top: 30px;
+    font-size: 24px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 24px;
+    margin-bottom: 15px; }
+
+  #about-main .container .right-side {
+    width: 900px; }
 
   #about .about-top .about-desc h2 {
     margin-bottom: 12px; }
@@ -3931,7 +4103,10 @@ section .center {
     margin-bottom: 15px;
     -webkit-background-size: 20px;
     background-size: 20px;
-    padding-left: 30px; } }
+    padding-left: 30px; }
+
+  #seo-text .container h2 {
+    font-size: 23px; } }
 @media (max-width: 705px) {
   #sub-top nav {
     height: 0;
@@ -3944,11 +4119,21 @@ section .center {
     margin-left: -2.6%;
     margin-right: -2.6%; }
 
+  #about-main .left-side, #seo-text .right-side {
+    display: none; }
+
+  #about-main .container {
+    margin: 0 auto;
+    padding-bottom: 20px; }
+
   .sinitsa .image {
     display: none; }
 
-  .sinitsa .desc {
+  .sinitsa .desc, #seo-text .left-side {
     width: 100%; }
+
+  #seo-text {
+    padding-bottom: 30px; }
 
   #sub-top nav > ul > li {
     padding-right: 0; }
@@ -4092,7 +4277,10 @@ section .center {
     padding-top: 50px; }
 
   #main-partners {
-    margin-top: 50px; } }
+    margin-top: 50px; }
+
+  #seo-text .container h2 {
+    font-size: 22px; } }
 @media (max-width: 605px) {
   #top {
     height: 100px; }
@@ -4313,10 +4501,34 @@ section .center {
     margin-top: 29px; }
 
   #main-partners {
-    margin-top: 40px; } }
+    margin-top: 40px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 23px;
+    margin-bottom: 18px; }
+
+  #seo-text .container h2 {
+    margin-top: 29px;
+    font-size: 21px; } }
 @media (max-width: 505px) {
   #ck-filialz .filial {
     width: 100%; }
+
+  #seo-text .container p {
+    font-size: 13px; }
+
+  #about-main .container .right-side p {
+    font-size: 13px;
+    line-height: 20px; }
+
+  .about-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    background-size: 18px;
+    padding-left: 26px; }
+
+  .about-icons {
+    margin-top: 25px; }
 
   .more-history img {
     margin-top: 27px; }
@@ -4434,7 +4646,14 @@ section .center {
     margin-top: 25px; }
 
   #main-partners {
-    margin-top: 35px; } }
+    margin-top: 35px; }
+
+  #about-main .container .right-side h2 {
+    padding-top: 20px; }
+
+  #seo-text .container h2 {
+    margin-top: 26px;
+    font-size: 20px; } }
 @media (max-width: 455px) {
   .title-block .container {
     padding-top: 14px;
@@ -4525,7 +4744,11 @@ section .center {
     margin-bottom: 33px; }
 
   .more-history img {
-    margin-top: 23px; } }
+    margin-top: 23px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 22px;
+    margin-bottom: 16px; } }
 @media (max-width: 405px) {
   h1, .title-block .container h1 {
     font-size: 20px; }
@@ -4647,10 +4870,24 @@ section .center {
     margin-bottom: 33px; }
 
   #main-gallery, #main-deserts, #main-doctors {
-    padding-top: 35px; } }
+    padding-top: 35px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 20px;
+    margin-bottom: 14px; } }
 @media (max-width: 365px) {
   h1, .title-block .container h1 {
     font-size: 19px; }
+
+  #about-main .container .right-side p {
+    font-size: 12px;
+    line-height: 19px; }
+
+  .about-list li {
+    margin-bottom: 10px;
+    font-size: 13px;
+    background-size: 16px;
+    padding-left: 25px; }
 
   #main-partners {
     margin-top: 25px; }
@@ -4754,13 +4991,29 @@ section .center {
     width: 38px; }
 
   #main-gallery, #main-deserts, #main-doctors {
-    padding-top: 30px; } }
+    padding-top: 30px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 19px;
+    margin-bottom: 12px; }
+
+  #seo-text .container h2 {
+    margin-top: 23px;
+    font-size: 19px; } }
 @media (max-width: 325px) {
   h1, .title-block .container h1 {
     font-size: 18px; }
 
+  #seo-text .container h2 {
+    margin-top: 20px;
+    font-size: 18px; }
+
   #main-partners {
     margin-top: 20px; }
+
+  #about-main .container .right-side h2 {
+    font-size: 18px;
+    margin-bottom: 10px; }
 
   #main-partners .container .in-partners {
     margin-top: 15px; }

@@ -26,7 +26,6 @@
 
 
             <div class="right-side">
-
                 <div class="mail">
                     <a href="mailto:info@sinicavet.ru">info@sinicavet.ru</a>
                 </div>
@@ -99,55 +98,121 @@
 
 
             <div class="filter">
-                <form action="">
-                    <div class="field">
-                        <div class="field-label">Ф.И.О специалиста</div>
-                        <input type="text" name="" id="fio" placeholder="Введите фамилию специалиста">
-                    </div>
+                <div class="smart-filter-section">
 
-                    <div class="field">
-                        <div class="field-label">Специализация</div>
-                        <div class="select" id="select-1">
-                            <div class="select__backdrop" data-select="backdrop"></div>
-
-                            <button type="button" class="select__trigger" data-select="trigger">
-                                Выберите из списка
-                            </button>
-
-                            <div class="select__dropdown">
-                                <ul class="select__items">
-                                    <li class="select__item" data-select="item">Специализация 1</li>
-                                    <li class="select__item select__item_selected" data-select="item">Специализация 2</li>
-                                    <li class="select__item" data-select="item">Специализация 3</li>
-                                    <li class="select__item" data-select="item">Специализация 4</li>
-                                </ul>
+                    <div id="title-search" style="
+    float: left;
+    width: 281px;
+">
+                        <form action="/search/index.php">
+                            <div class="field">
+                                <div class="bx-input-group">
+                                    <div class="field-label">Ф.И.О специалиста</div>
+                                    <input id="title-search-input" type="text" name="q" value="" autocomplete="off" class="bx-form-control">
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
+                    <div class="filter-block">
+                        <form name="_form" action="/team/" method="get" class="smart-filter-form">
 
-                    <div class="field">
-                        <div class="field-label">Филиал</div>
-                        <div class="select" id="select-2">
-                            <div class="select__backdrop" data-select="backdrop"></div>
 
-                            <button type="button" class="select__trigger" data-select="trigger">
-                                Выберите из списка
-                            </button>
 
-                            <div class="select__dropdown">
-                                <ul class="select__items">
-                                    <li class="select__item" data-select="item">Филиал 1</li>
-                                    <li class="select__item select__item_selected" data-select="item">Филиал 2</li>
-                                    <li class="select__item" data-select="item">Филиал 3</li>
-                                    <li class="select__item" data-select="item">Филиал 4</li>
-                                </ul>
+
+                            <div class="field smart-filter-parameters-box bx-active">
+                                <span class="smart-filter-container-modef"></span>
+
+                                <div class="smart-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)">
+
+                                    <span class="field-label">Специализация</span>
+
+                                </div>
+
+                                <div class="smart-filter-block" data-role="bx_filter_block">
+                                    <div class="smart-filter-parameters-box-container">
+                                        <div class="smart-filter-input-group-dropdown">
+                                            <div class="select__trigger" onclick="smartFilter.showDropDownPopup(this, '25')">
+                                                <div class="smart-filter-dropdown-text" data-role="currentOption">
+                                                    Все												</div>
+                                                <div class="smart-filter-dropdown-arrow"></div>
+                                                <input style="display: none" type="radio" name="arrFilter_25" id="all_arrFilter_25_2788221432" value="">
+                                                <input style="display: none" type="radio" name="arrFilter_25" id="arrFilter_25_2788221432" value="2788221432">
+                                                <input style="display: none" type="radio" name="arrFilter_25" id="arrFilter_25_945058907" value="945058907">
+                                                <input style="display: none" type="radio" name="arrFilter_25" id="arrFilter_25_1330857165" value="1330857165">
+                                                <input style="display: none" type="radio" name="arrFilter_25" id="arrFilter_25_3510096238" value="3510096238">
+
+                                                <div class="smart-filter-dropdown-popup select__dropdown" data-role="dropdownContent" style="display: none;">
+                                                    <ul class="select__items">
+                                                        <li class="select__item select__item_selected">
+                                                            <label for="all_arrFilter_25_2788221432" class="smart-filter-dropdown-label" data-role="label_all_arrFilter_25_2788221432" onclick="smartFilter.selectDropDownItem(this, 'all_arrFilter_25_2788221432')">
+                                                                Все															</label>
+                                                        </li>
+                                                        <li class="select__item">
+                                                            <label for="arrFilter_25_2788221432" class="smart-filter-dropdown-label" data-role="label_arrFilter_25_2788221432" onclick="smartFilter.selectDropDownItem(this, 'arrFilter_25_2788221432')">
+                                                                Администратор																</label>
+                                                        </li>
+                                                        <li class="select__item">
+                                                            <label for="arrFilter_25_945058907" class="smart-filter-dropdown-label" data-role="label_arrFilter_25_945058907" onclick="smartFilter.selectDropDownItem(this, 'arrFilter_25_945058907')">
+                                                                Ассистент																</label>
+                                                        </li>
+                                                        <li class="select__item">
+                                                            <label for="arrFilter_25_1330857165" class="smart-filter-dropdown-label" data-role="label_arrFilter_25_1330857165" onclick="smartFilter.selectDropDownItem(this, 'arrFilter_25_1330857165')">
+                                                                Ветеринарный врач																</label>
+                                                        </li>
+                                                        <li class="select__item">
+                                                            <label for="arrFilter_25_3510096238" class="smart-filter-dropdown-label" data-role="label_arrFilter_25_3510096238" onclick="smartFilter.selectDropDownItem(this, 'arrFilter_25_3510096238')">
+                                                                Основатель																</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <button type="submit" class="btn submit">Найти специалиста</button>
-                    <button type="reset" class="btn reset">Сбросить</button>
-                </form>
+                            <div class="field smart-filter-parameters-box bx-active">
+                                <span class="smart-filter-container-modef"></span>
+
+                                <div class="smart-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)">
+
+                                    <span class="field-label">Филиал</span>
+
+                                </div>
+
+                                <div class="smart-filter-block" data-role="bx_filter_block">
+                                    <div class="smart-filter-parameters-box-container">
+                                        <div class="smart-filter-input-group-dropdown">
+                                            <div class="select__trigger" onclick="smartFilter.showDropDownPopup(this, '26')">
+                                                <div class="smart-filter-dropdown-text" data-role="currentOption">
+                                                    Все												</div>
+                                                <div class="smart-filter-dropdown-arrow"></div>
+                                                <input style="display: none" type="radio" name="arrFilter_26" id="all_arrFilter_26_2944839123" value="">
+                                                <input style="display: none" type="radio" name="arrFilter_26" id="arrFilter_26_2944839123" value="2944839123">
+
+                                                <div class="smart-filter-dropdown-popup select__dropdown" data-role="dropdownContent" style="display: none;">
+                                                    <ul class="select__items">
+                                                        <li class="select__item select__item_selected">
+                                                            <label for="all_arrFilter_26_2944839123" class="smart-filter-dropdown-label" data-role="label_all_arrFilter_26_2944839123" onclick="smartFilter.selectDropDownItem(this, 'all_arrFilter_26_2944839123')">
+                                                                Все															</label>
+                                                        </li>
+                                                        <li class="select__item">
+                                                            <label for="arrFilter_26_2944839123" class="smart-filter-dropdown-label" data-role="label_arrFilter_26_2944839123" onclick="smartFilter.selectDropDownItem(this, 'arrFilter_26_2944839123')">
+                                                                Филиал Кунцевский																</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn submit" type="submit" id="set_filter" name="set_filter" value="Найти специалиста">Найти специалиста</button>
+                            <button class="btn reset" type="submit" id="del_filter" name="del_filter" value="Сбросить">Сбросить</button>
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <div class="in-doctors">
