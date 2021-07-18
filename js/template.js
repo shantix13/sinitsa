@@ -570,9 +570,13 @@ $('.menu-trigger').click(function () {
 });
 
 //Триггерим поиск в хедере
+let take_widther = '80%';
+if($(document).width() < 600){
+    take_widther = '98%';
+}
 $('.search > button').click(function () {
     if (!($(this).hasClass('is-active'))) {
-        $('.search').css({'height': 'auto', 'width' : '80%'}, 500);
+        $('.search').css({'height': 'auto', 'width' : take_widther}, 500);
         $(this).addClass('is-active');
         $('#sub-top .search').addClass('search-active');
         return false;
