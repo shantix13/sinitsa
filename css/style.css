@@ -1498,7 +1498,8 @@ section .center {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  z-index: 999; }
+  z-index: 999;
+  min-width: 320px; }
   .former .container {
     width: 570px;
     background-color: #fff;
@@ -2357,7 +2358,7 @@ section .center {
   margin-top: 50px; }
 
 .pagination {
-  margin-top: 20px; }
+  margin-top: 40px; }
 
 .pagination ul {
   display: flex;
@@ -2764,7 +2765,7 @@ section .center {
   footer {
     height: 820px; }
 
-  .filial:last-of-type {
+  footer .filial:last-of-type {
     position: absolute;
     right: 0;
     top: 335px; }
@@ -3407,6 +3408,18 @@ section .center {
   .container {
     width: 95%; }
 
+  .table-item {
+    white-space: nowrap; }
+
+  .table-item > div {
+    width: 947px;
+    overflow-x: scroll;
+    overflow-y: -moz-scrollbars-vertical;
+    height: 100%; }
+
+  .pagination {
+    margin-top: 30px; }
+
   .certz .titlex {
     margin-bottom: 10px; }
 
@@ -3492,7 +3505,7 @@ section .center {
     background-size: 20px auto; }
 
   #right-icons button span {
-    padding-top: 18px;
+    padding-top: 19px;
     padding-bottom: 17px;
     font-size: 16px; }
 
@@ -3778,8 +3791,10 @@ section .center {
     position: absolute;
     left: 0;
     width: 40%;
-    top: 300px;
-    flex-wrap: wrap; }
+    top: 330px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 40%; }
     #top-item .btns button {
       width: 100%;
       justify-content: center; }
@@ -4121,6 +4136,9 @@ section .center {
   h1, .title-block .container h1 {
     font-size: 24px; }
 
+  #doctor-item .about-block {
+    margin-top: 20px; }
+
   .former .container {
     padding-left: 32px;
     padding-right: 32px; }
@@ -4387,6 +4405,9 @@ section .center {
     text-align: center;
     margin-left: -2.6%;
     margin-right: -2.6%; }
+
+  #breadz ul {
+    flex-wrap: wrap; }
 
   #sub-item {
     margin-top: 43px; }
@@ -4676,8 +4697,20 @@ section .center {
   #top {
     height: 100px; }
 
+  #sub-item .right-side > div {
+    grid-gap: 16px 10px; }
+
   #sub-item {
     margin-top: 40px; }
+
+  .pagination ul li a, .pagination ul li span {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 10px; }
+
+  .pagination {
+    margin-top: 20px; }
 
   #doctor-item #sub-item > div, #doctor-item .about-block {
     padding: 20px; }
@@ -5442,6 +5475,12 @@ section .center {
   h1, .title-block .container h1 {
     font-size: 20px; }
 
+  #service-item #top-item .btns {
+    margin-bottom: 0; }
+
+  .pagination ul li {
+    margin-right: 10px; }
+
   #doctor-item #sub-item li {
     font-size: 13px;
     margin-bottom: 8px; }
@@ -5894,6 +5933,15 @@ section .center {
 @media (max-width: 325px) {
   h1, .title-block .container h1 {
     font-size: 18px; }
+
+  #top-item .description p {
+    font-size: 12px;
+    line-height: 21px; }
+
+  .pagination ul li a, .pagination ul li span {
+    height: 25px;
+    width: 25px;
+    font-size: 12px; }
 
   .certz {
     margin-top: 10px; }

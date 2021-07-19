@@ -1510,7 +1510,6 @@ section .center {
       }
     }
   }
-
 }
 
 .former {
@@ -1525,6 +1524,7 @@ section .center {
   justify-content: center;
   opacity: 0;
   z-index: 999;
+  min-width: 320px;
 
   .container {
     width: 570px;
@@ -2747,7 +2747,7 @@ section .center {
 }
 
 .pagination {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .pagination ul {
@@ -3289,7 +3289,7 @@ section .center {
     height: 820px;
   }
 
-  .filial:last-of-type {
+footer .filial:last-of-type {
     position: absolute;
     right: 0;
     top: 335px;
@@ -4119,6 +4119,21 @@ section .center {
     width: 95%;
   }
 
+  .table-item{
+    white-space: nowrap;
+  }
+
+  .table-item > div{
+    width: 947px;
+    overflow-x: scroll;
+    overflow-y: -moz-scrollbars-vertical;
+    height: 100%;
+  }
+
+  .pagination {
+    margin-top: 30px;
+  }
+
   .certz .titlex{
     margin-bottom: 10px;
   }
@@ -4226,7 +4241,7 @@ section .center {
   }
 
   #right-icons button span {
-    padding-top: 18px;
+    padding-top: 19px;
     padding-bottom: 17px;
     font-size: 16px;
   }
@@ -4588,12 +4603,18 @@ section .center {
     width: 170px;
   }
 
+  #doctor-item #top-item .description{
+
+  }
+
   #top-item .btns{
     position: absolute;
     left: 0;
     width: 40%;
-    top: 300px;
+    top: 330px;
     flex-wrap: wrap;
+    flex-direction: column;
+    width: 40%;
 
 
     button{
@@ -5036,6 +5057,10 @@ section .center {
     font-size: 24px;
   }
 
+  #doctor-item .about-block{
+    margin-top: 20px;
+  }
+
   .former .container{
     padding-left: 32px;
     padding-right: 32px;
@@ -5375,6 +5400,10 @@ section .center {
     text-align: center;
     margin-left: -2.6%;
     margin-right: -2.6%;
+  }
+
+  #breadz ul{
+    flex-wrap: wrap;
   }
 
   #sub-item{
@@ -5746,8 +5775,23 @@ section .center {
     height: 100px;
   }
 
+  #sub-item .right-side > div {
+    grid-gap: 16px 10px;
+  }
+
   #sub-item{
     margin-top: 40px;
+  }
+
+  .pagination ul li a, .pagination ul li span{
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 10px;
+  }
+
+  .pagination {
+    margin-top: 20px;
   }
 
   #doctor-item #sub-item > div, #doctor-item .about-block{
@@ -6734,6 +6778,14 @@ section .center {
     font-size: 20px;
   }
 
+  #service-item #top-item .btns {
+    margin-bottom: 0;
+  }
+
+  .pagination ul li {
+    margin-right: 10px;
+  }
+
   #doctor-item #sub-item li {
     font-size: 13px;
     margin-bottom: 8px;
@@ -7317,6 +7369,18 @@ section .center {
 @media(max-width: 325px) {
   h1, .title-block .container h1 {
     font-size: 18px;
+  }
+
+  #top-item .description p {
+    font-size: 12px;
+    line-height: 21px;
+  }
+
+  .pagination ul li a, .pagination ul li span{
+    height: 25px;
+    width: 25px;
+    font-size: 12px;
+
   }
 
   .certz {
