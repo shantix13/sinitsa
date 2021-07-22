@@ -177,6 +177,12 @@
 });
 
 
+$( document ).ready(function() {
+    $('label[for=your-phone] + input').wrap('<div class="phoner"></div>');
+});
+
+
+
 // Select plug
 
 (function () {
@@ -316,6 +322,24 @@ class CustomSelect {
 const select1 = new CustomSelect('#select-1');
 const select2 = new CustomSelect('#select-2');
 
+// Вычисляем высоту блоков у врачей
+
+window.onload = function() {
+    let each_doctor = [];
+    let ix = 0;
+    $('#main-doctors .titlex + .in-doctors .doctor').each(function(){
+        let doctor_height = $(this).height();
+        each_doctor[ix] = doctor_height;
+        ix++;
+    });
+
+    var largest = Math.max.apply(Math, each_doctor);
+    //console.log(each_doctor);
+    //console.log(largest);
+    $('#main-doctors .titlex + .in-doctors .doctor').css({'height' : largest + 'px'});
+}
+
+
 
 // Инициализируем слайдеры и карусели
 $('#main-doctors .titlex + .in-doctors').slick({
@@ -339,6 +363,9 @@ $('#main-doctors .titlex + .in-doctors').slick({
         }
     ]
 });
+
+
+
 
 
 $('.in-partners').slick({
@@ -428,24 +455,36 @@ $('#slider .container').slick({
 
 // Открываем попапы по кликам
 $('.mail').click(function () {
+    let take_offset = $(document).scrollTop();
+    take_offset = take_offset + 30;
+    $('#mail-form > .container').css({'top' : take_offset + 'px'});
     $('#mail-form').css({'display': 'flex'}).addClass('active-form').animate({'opacity': '1'}, 600);
     return false;
 });
 
 
 $('.support').click(function () {
+    let take_offset = $(document).scrollTop();
+    take_offset = take_offset + 30;
+    $('#consult-form > .container').css({'top' : take_offset + 'px'});
     $('#consult-form').css({'display': 'flex'}).addClass('active-form').animate({'opacity': '1'}, 600);
     return false;
 });
 
 
 $('.cross').click(function () {
+    let take_offset = $(document).scrollTop();
+    take_offset = take_offset + 30;
+    $('#mail-form-doc > .container').css({'top' : take_offset + 'px'});
     $('#mail-form-doc').css({'display': 'flex'}).addClass('active-form').animate({'opacity': '1'}, 600);
     return false;
 });
 
 
 $('.locate').click(function () {
+    let take_offset = $(document).scrollTop();
+    take_offset = take_offset + 30;
+    $('#locate-form > .container').css({'top' : take_offset + 'px'});
     $('#locate-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
     return false;
 });
@@ -557,17 +596,19 @@ $('img.img-svg').each(function () {
 
 // Триггерим мобильное меню
 $('.menu-trigger').click(function () {
-    if (!($(this).hasClass('is-active'))) {
-        $('nav').css({'height': 'auto'}, 500);
+        $('nav').animate({'left': '0'}, 500);
         $(this).addClass('is-active');
         return false;
-    }
-    else {
-        $('nav').animate({'height': '0'}, 500);
-        $(this).removeClass('is-active');
-        return false;
-    }
 });
+
+$('nav .closer').click(function () {
+    $('nav').animate({'left': '-180px'}, 500);
+    $(this).removeClass('is-active');
+    return false;
+})
+
+
+
 
 //Триггерим поиск в хедере
 let take_widther = '80%';
@@ -586,11 +627,12 @@ $('.search > button').click(function () {
 // Клик вне поиска закрывает его.
 $(function ($) {
     $(document).mouseup(function (e) {
-        var div = $("#sub-top .search");
+        var div = $("#sub-top .search, .title-search-result");
         if (!div.is(e.target) && div.has(e.target).length === 0) {
             $('#sub-top .search').css({'width': '20px', 'height' : '20px'});
             $('#sub-top .search').removeClass('search-active');
             $('.search > button').removeClass('is-active');
+            $('.title-search-result').css({'display':'none'});
             return false;
         }
     });

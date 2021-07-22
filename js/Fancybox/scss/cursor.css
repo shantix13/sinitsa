@@ -1,0 +1,14 @@
+.fancybox__carousel .is-draggable {
+  cursor: move;
+  cursor: grab; }
+.fancybox__carousel .is-dragging {
+  cursor: move;
+  cursor: grabbing; }
+.fancybox__carousel .carousel__slide:not(.has-image) .fancybox__content {
+  cursor: auto; }
+.fancybox__carousel .carousel__slide.can-zoom_in .fancybox__content {
+  cursor: zoom-in; }
+.fancybox__carousel .carousel__slide.can-zoom_out .fancybox__content {
+  cursor: zoom-out; }
+
+/*# sourceMappingURL=cursor.css.map */

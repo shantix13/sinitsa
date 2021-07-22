@@ -6,6 +6,7 @@
 
 header {
   margin-bottom: 10px;
+  position: relative;
 }
 
 #top {
@@ -128,7 +129,25 @@ header {
   nav {
     position: absolute;
     right: 80px;
-    margin-top: 27px;
+    margin-top: 35px;
+
+    .closer {
+      display: block;
+      cursor: pointer;
+      width: 15px;
+      height: 15px;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      background: url('../images/icons/icon-close.svg') center no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 20px;
+      display: none;
+    }
 
     & > ul {
       @include flex-nowrap;
@@ -136,6 +155,7 @@ header {
       & > li {
         padding-right: 40px;
         position: relative;
+        line-height: 10px;
 
         &.deeper {
           padding-bottom: 20px;
@@ -170,6 +190,7 @@ header {
           @include bordex(8px);
           visibility: hidden;
           opacity: 0;
+          line-height: 1.3;
 
           li {
             margin-bottom: 5px;
@@ -211,7 +232,7 @@ header {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-bottom: 20px;
+    padding-bottom: 0;
     width: 20px;
     height: 20px;
     overflow: hidden;
@@ -247,10 +268,11 @@ header {
         font-size: 14px;
         color: #fff;
         height: 39px;
-        padding-top: 10px;
+        padding-top: 9px;
         font-weight: 500;
         margin-left: 30px;
         height: 42px;
+        margin-bottom: 20px;
       }
     }
 
@@ -544,7 +566,7 @@ header {
   padding-top: 100px;
 
   &.cat-doctors {
-
+    margin-top: 30px;
     padding-top: 0;
 
     .center a::after {
@@ -715,13 +737,16 @@ header {
 
   p {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     color: $mid-purple;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
   }
 
   .doctor {
     margin-right: 30px;
+    display: flex;
+    position: relative;
+    display: flex;
   }
 
 }
@@ -734,7 +759,7 @@ header {
     padding: 10px;
     border: 1px solid $border-color;
     @include bordex(10px);
-    padding-bottom: 0;
+    padding-bottom: 65px;
 
     img {
       border-radius: 10px 10px 0 0;
@@ -776,6 +801,9 @@ header {
     margin-top: 20px;
     margin-left: -10px;
     margin-right: -10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 
     &::after {
       content: '';
@@ -1513,7 +1541,7 @@ section .center {
 }
 
 .former {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -1528,6 +1556,7 @@ section .center {
 
   .container {
     width: 570px;
+    position: absolute;
     background-color: #fff;
     @include bordex(10px);
     padding-left: 50px;
@@ -2683,11 +2712,13 @@ section .center {
 
     &:nth-of-type(3) {
       border-right: 1px dashed $debugger-font;
+      border-bottom: 1px dashed $debugger-font;
       border-radius: 0 10px 10px 0;
     }
 
     &:last-of-type {
       width: calc(100% / 3 - 10px);
+      border-top: none;
     }
 
     h3 {
@@ -3172,16 +3203,25 @@ section .center {
   height: 100%;
 }
 
-#main-partners .titlex-btns button{
+#main-partners .titlex-btns button {
   background-color: #fff;
 
-  &:hover{
+  &:hover {
     background-color: $blue;
 
-    svg{
+    svg {
       fill: #fff;
     }
   }
+}
+
+.popup-window .select__item label {
+  font-family: 'Geometria', Helvetica, sans-serif;
+}
+
+
+.title-search-result .others_result .select__item:hover, .title-search-result .others_result .select__item:hover > a{
+  color: #fff;
 }
 
 // Adaptive Styles
@@ -3250,7 +3290,7 @@ section .center {
     width: 1070px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 47px;
     padding-right: 47px;
   }
@@ -3289,7 +3329,7 @@ section .center {
     height: 820px;
   }
 
-footer .filial:last-of-type {
+  footer .filial:last-of-type {
     position: absolute;
     right: 0;
     top: 335px;
@@ -3383,9 +3423,15 @@ footer .filial:last-of-type {
     padding-bottom: 18px;
   }
 
-  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+  #main-services p, #main-advantages p, #main-gallery p, #main-deserts p {
     font-size: 17px;
     padding-bottom: 19px;
+  }
+
+  #main-doctors p {
+    font-size: 15px;
+    padding-bottom: 6px;
+    margin-bottom: 0;
   }
 
   #doctor-item .description .status {
@@ -3455,7 +3501,7 @@ footer .filial:last-of-type {
     width: 970px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 44px;
     padding-right: 44px;
   }
@@ -3550,9 +3596,13 @@ footer .filial:last-of-type {
     padding-bottom: 16px;
   }
 
-  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+  #main-services p, #main-advantages p, #main-gallery p, #main-deserts p {
     font-size: 16px;
     padding-bottom: 18x;
+  }
+
+  #main-doctors p {
+    font-size: 14px;
   }
 
   #main-advantages .in-advantages {
@@ -3739,11 +3789,11 @@ footer .filial:last-of-type {
     margin-right: 20px;
   }
 
-  #top-item .btns button{
+  #top-item .btns button {
     padding: 19px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 41px;
     padding-right: 41px;
   }
@@ -3822,10 +3872,6 @@ footer .filial:last-of-type {
 
   .filial:last-of-type {
     top: 344px;
-  }
-
-  #main-doctors p {
-    margin-bottom: 10px;
   }
 
   #ck-filialz .filial .btn {
@@ -3931,7 +3977,7 @@ footer .filial:last-of-type {
     margin-bottom: 6px;
   }
 
-  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+  #main-services p, #main-advantages p, #main-gallery p, #main-deserts p {
     font-size: 15px;
     padding-bottom: 15px;
   }
@@ -4119,11 +4165,11 @@ footer .filial:last-of-type {
     width: 95%;
   }
 
-  .table-item{
+  .table-item {
     white-space: nowrap;
   }
 
-  .table-item > div{
+  .table-item > div {
     width: 947px;
     overflow-x: scroll;
     overflow-y: -moz-scrollbars-vertical;
@@ -4134,19 +4180,19 @@ footer .filial:last-of-type {
     margin-top: 30px;
   }
 
-  .certz .titlex{
+  .certz .titlex {
     margin-bottom: 10px;
   }
 
-  #doctor-item #sub-item > div, #doctor-item .about-block{
+  #doctor-item #sub-item > div, #doctor-item .about-block {
     padding: 25px;
   }
 
-  #top-item .btns button{
+  #top-item .btns button {
     padding: 14px 10px;
   }
 
-  .titlex .titlex-btns > button{
+  .titlex .titlex-btns > button {
     width: 40px;
     height: 40px;
   }
@@ -4155,7 +4201,7 @@ footer .filial:last-of-type {
     margin-right: 20px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 38px;
     padding-right: 38px;
   }
@@ -4408,7 +4454,7 @@ footer .filial:last-of-type {
     margin-bottom: 6px;
   }
 
-  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+  #main-services p, #main-advantages p, #main-gallery p, #main-deserts p {
     font-size: 14px;
     padding-bottom: 16px;
   }
@@ -4570,7 +4616,7 @@ footer .filial:last-of-type {
 
   }
 
-  #seo-text .container{
+  #seo-text .container {
     margin: 0 auto;
   }
 
@@ -4603,11 +4649,11 @@ footer .filial:last-of-type {
     width: 170px;
   }
 
-  #doctor-item #top-item .description{
+  #doctor-item #top-item .description {
 
   }
 
-  #top-item .btns{
+  #top-item .btns {
     position: absolute;
     left: 0;
     width: 40%;
@@ -4616,20 +4662,19 @@ footer .filial:last-of-type {
     flex-direction: column;
     width: 40%;
 
-
-    button{
+    button {
       width: 100%;
       justify-content: center;
     }
 
   }
 
-  #top-item .btns .sign-up{
+  #top-item .btns .sign-up {
     margin-right: 0;
     margin-bottom: 20px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -5057,11 +5102,11 @@ footer .filial:last-of-type {
     font-size: 24px;
   }
 
-  #doctor-item .about-block{
+  #doctor-item .about-block {
     margin-top: 20px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -5211,7 +5256,7 @@ footer .filial:last-of-type {
     margin-right: 20px;
   }
 
-  #main-gallery .in-photos, #main-deserts .in-photos{
+  #main-gallery .in-photos, #main-deserts .in-photos {
     margin-right: -20px;
   }
 
@@ -5236,6 +5281,7 @@ footer .filial:last-of-type {
 
   .doctor > a {
     padding: 5px;
+    padding-bottom: 65px;
   }
 
   .doctor span {
@@ -5383,7 +5429,7 @@ footer .filial:last-of-type {
     font-size: 23px;
   }
 
-  #sub-item{
+  #sub-item {
     margin-top: 46px;
   }
 
@@ -5391,26 +5437,30 @@ footer .filial:last-of-type {
 
 @media(max-width: 705px) {
   #sub-top nav {
-    height: 0;
     overflow: hidden;
-    right: 0;
-    left: 0;
+    left: -180px;
     z-index: 99;
     background-color: #fff;
     text-align: center;
     margin-left: -2.6%;
-    margin-right: -2.6%;
+    width: 175px;
+    box-shadow: 0px 0px 15px rgba(150, 150, 150, 0.15);
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    margin-top: -30px;
+    right: auto;
   }
 
-  #breadz ul{
+  #breadz ul {
     flex-wrap: wrap;
   }
 
-  #sub-item{
+  #sub-item {
     margin-top: 43px;
   }
 
-  #top-item .btns{
+  #top-item .btns {
     top: 60%;
   }
 
@@ -5419,7 +5469,7 @@ footer .filial:last-of-type {
     line-height: 22px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 29px;
     padding-right: 29px;
     padding-bottom: 33px;
@@ -5441,6 +5491,15 @@ footer .filial:last-of-type {
   .history-item:nth-of-type(2) {
     border-right: 1px dashed $debugger-font;
     border-radius: 0 10px 10px 0;
+    border-bottom: 1px dashed $debugger-font;
+  }
+
+  .history-item:nth-of-type(4), .history-item:nth-of-type(5) {
+    border-top: none;
+  }
+
+  .history-item:nth-of-type(6){
+    border-top: 1px dashed $debugger-font;
   }
 
   .values {
@@ -5553,17 +5612,38 @@ footer .filial:last-of-type {
     padding-right: 0;
   }
 
-  #sub-top nav > ul a {
-    font-size: 16px;
+  #sub-top nav .closer {
     display: block;
-    padding-top: 9px;
-    padding-bottom: 10px;
+  }
+
+  #sub-top nav > ul a {
+    font-size: 13px;
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    line-height: 15px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 1px solid #E4E4E4;
+    text-align: left;
+    padding-left: 20px;
+
+    &:first-of-type {
+      border: none;
+    }
+  }
+
+  #sub-top nav > ul > li.deeper::after {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    transform: rotate(-90deg);
   }
 
   #sub-top nav > ul {
     flex-direction: column;
-    padding-bottom: 10px;
-    padding-top: 10px;
   }
 
   #sub-top nav > ul > li.deeper {
@@ -5763,7 +5843,7 @@ footer .filial:last-of-type {
     font-size: 22px;
   }
 
-  #sub-top .search .search-item .in-search-item{
+  #sub-top .search .search-item .in-search-item {
     padding-left: 28px;
     padding-right: 28px;
   }
@@ -5779,11 +5859,11 @@ footer .filial:last-of-type {
     grid-gap: 16px 10px;
   }
 
-  #sub-item{
+  #sub-item {
     margin-top: 40px;
   }
 
-  .pagination ul li a, .pagination ul li span{
+  .pagination ul li a, .pagination ul li span {
     width: 30px;
     height: 30px;
     font-size: 15px;
@@ -5794,16 +5874,15 @@ footer .filial:last-of-type {
     margin-top: 20px;
   }
 
-  #doctor-item #sub-item > div, #doctor-item .about-block{
+  #doctor-item #sub-item > div, #doctor-item .about-block {
     padding: 20px;
   }
 
-  #top-item .description > div:first-of-type{
+  #top-item .description > div:first-of-type {
     padding: 15px;
   }
 
-
-  #top-item{
+  #top-item {
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -5812,18 +5891,17 @@ footer .filial:last-of-type {
     width: 100%;
   }
 
-  #top-item .description{
+  #top-item .description {
     margin-top: 20px;
   }
 
-  #top-item .btns{
+  #top-item .btns {
     position: static;
     width: 100%;
 
   }
 
-
-  #sub-top .search .search-item .in-search-item + a{
+  #sub-top .search .search-item .in-search-item + a {
     padding-left: 7px;
     padding-right: 7px;
   }
@@ -5832,7 +5910,7 @@ footer .filial:last-of-type {
     padding-bottom: 50px;
   }
 
-  .titlex .titlex-btns > button svg{
+  .titlex .titlex-btns > button svg {
     width: 6px;
   }
 
@@ -5845,17 +5923,16 @@ footer .filial:last-of-type {
     height: 30px;
   }
 
-  #sub-top .search .search-item{
+  #sub-top .search .search-item {
     padding-right: 28px;
   }
 
-
-  #sub-top .search .search-item .in-search-item{
+  #sub-top .search .search-item .in-search-item {
     padding-left: 26px;
     padding-right: 26px;
   }
 
-  #sub-top .search .search-item p{
+  #sub-top .search .search-item p {
     line-height: 20px;
     font-size: 13px;
   }
@@ -5868,21 +5945,21 @@ footer .filial:last-of-type {
     height: 50px;
   }
 
-  .former .container button{
+  .former .container button {
     height: 54px;
   }
 
-  .former .container .phoner::before{
+  .former .container .phoner::before {
     top: 15px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 26px;
     padding-right: 26px;
     padding-bottom: 31px;
   }
 
-  .former .container{
+  .former .container {
     width: 90%;
   }
 
@@ -6267,7 +6344,7 @@ footer .filial:last-of-type {
     margin-top: -18px;
   }
 
-  #sub-top .search .search-item .in-search-item{
+  #sub-top .search .search-item .in-search-item {
     padding-left: 23px;
     padding-right: 23px;
   }
@@ -6277,16 +6354,27 @@ footer .filial:last-of-type {
   }
 }
 
+@media(max-width: 564px) {
+  #sub-logo br {
+    display: none;
+  }
+
+  #sub-logo {
+    width: 250px;
+  }
+}
+
 @media(max-width: 505px) {
   #ck-filialz .filial {
     width: 100%;
+    position: static;
   }
 
-  #sub-item{
+  #sub-item {
     margin-top: 40px;
   }
 
-  #locate-form .container p, #locate-form .container p{
+  #locate-form .container p, #locate-form .container p {
     font-size: 13px;
     margin-bottom: 12px;
   }
@@ -6295,20 +6383,20 @@ footer .filial:last-of-type {
     padding-bottom: 15px;
   }
 
-  #sub-top .search .search-item{
+  #sub-top .search .search-item {
     margin-bottom: 15px;
   }
 
-  #sub-top .search .search-field{
+  #sub-top .search .search-field {
     background: url(../images/icons/icon-search-grey.svg) 17px 16px no-repeat;
     padding-left: 50px;
   }
 
-  #sub-top .search .search-item .in-search-item + a{
+  #sub-top .search .search-item .in-search-item + a {
     font-size: 13px;
   }
 
-  #sub-top .search .search-item .in-search-item{
+  #sub-top .search .search-item .in-search-item {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -6317,7 +6405,7 @@ footer .filial:last-of-type {
     font-size: 15px;
   }
 
-  .doc-form a{
+  .doc-form a {
     font-size: 13px;
   }
 
@@ -6337,7 +6425,7 @@ footer .filial:last-of-type {
     font-size: 18px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 23px;
     padding-right: 23px;
     padding-bottom: 28px;
@@ -6412,9 +6500,13 @@ footer .filial:last-of-type {
     background-size: 200px, 90px;
   }
 
-  #main-services p, #main-advantages p, #main-doctors p, #main-gallery p, #main-deserts p {
+  #main-services p, #main-advantages p, #main-gallery p, #main-deserts p {
     font-size: 13px;
     padding-bottom: 12px;
+  }
+
+  #main-doctors p {
+    font-size: 13px;
   }
 
   .doctor span {
@@ -6583,21 +6675,35 @@ footer .filial:last-of-type {
   }
 }
 
+@media(max-width: 490px) {
+  footer .filial:last-of-type {
+    top: 345px;
+  }
+}
+
 @media(max-width: 455px) {
   .title-block .container {
     padding-top: 14px;
     padding-bottom: 16px;
   }
 
+  #main-doctors .slick-slide.doctor {
+    margin-right: 15px;
+  }
+
+  #main-doctors .slick-slider {
+    margin-right: -15px;
+  }
+
   .in-certz a {
     margin-right: 0;
   }
 
-  #sub-item{
+  #sub-item {
     margin-top: 37px;
   }
 
-  #top-item .btns{
+  #top-item .btns {
     margin-top: 27px;
     margin-top: 40px;
   }
@@ -6704,7 +6810,8 @@ footer .filial:last-of-type {
   }
 
   #bottom-socials {
-    top: 8px;
+    top: 0;
+    margin-bottom: 20px;
   }
 
   #copy, #studio {
@@ -6759,16 +6866,21 @@ footer .filial:last-of-type {
     font-size: 20px;
   }
 
-  #sub-top .search .search-item{
+  #sub-top .search .search-item {
     padding-right: 21px;
   }
 
-  #sub-top .search .search-item{
+  #sub-top .search .search-item {
     padding-right: 25px;
   }
 
   #doctor-item .about-block > div {
     margin-bottom: 20px;
+  }
+
+  #main-services .in-services {
+    grid-template-columns: repeat(1, 0.9fr);
+    justify-content: center;
   }
 
 }
@@ -6796,31 +6908,27 @@ footer .filial:last-of-type {
     margin-bottom: 9px;
   }
 
-  #doctor-item #sub-item > div, #doctor-item .about-block{
+  #doctor-item #sub-item > div, #doctor-item .about-block {
     padding: 15px;
   }
 
-  #sub-top .search .search-item{
+  #sub-top .search .search-item {
     padding-right: 24px;
   }
 
-  #sub-top .search .search-item{
+  #sub-top .search .search-item {
     padding-right: 18px;
-  }
-
-  #main-services .in-services .in-service h3{
-    font-size: 12px;
   }
 
   #slider .slick-slide img {
     left: -43%;
   }
 
-  .doc-form a{
+  .doc-form a {
     font-size: 14px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 25px;
@@ -6868,11 +6976,6 @@ footer .filial:last-of-type {
   #main-doctors .filter form .submit, #main-doctors .filter form .reset {
     font-size: 12px;
     margin-top: 10px;
-  }
-
-  #main-services .in-services {
-    grid-template-columns: repeat(1, 0.9fr);
-    justify-content: center;
   }
 
   .doctor h3 {
@@ -7040,7 +7143,7 @@ footer .filial:last-of-type {
     font-size: 14px;
   }
 
-  #sub-top .search .search-item .in-search-item{
+  #sub-top .search .search-item .in-search-item {
     padding-left: 17px;
     padding-right: 17px;
   }
@@ -7050,12 +7153,12 @@ footer .filial:last-of-type {
     margin-bottom: 14px;
   }
 
-  #top-item .btns{
+  #top-item .btns {
     margin-top: 25px;
     margin-bottom: 35px;
   }
 
-  #sub-item{
+  #sub-item {
     margin-top: 34px;
   }
 }
@@ -7065,25 +7168,25 @@ footer .filial:last-of-type {
     font-size: 19px;
   }
 
-  #sub-item{
+  #sub-item {
     margin-top: 30px;
   }
 
-  #locate-form .container p, #locate-form .container p{
+  #locate-form .container p, #locate-form .container p {
     font-size: 12px;
     margin-bottom: 10px;
   }
 
-  #main-services .in-services .in-service h3{
+  #main-services .in-services .in-service h3 {
     font-size: 16px;
   }
 
-  #sub-top .search .search-item .in-search-item{
+  #sub-top .search .search-item .in-search-item {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  .doc-form a{
+  .doc-form a {
     font-size: 12px;
   }
 
@@ -7095,11 +7198,11 @@ footer .filial:last-of-type {
     background-size: 100%;
   }
 
-  .former .container button{
+  .former .container button {
     height: 50px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 17px;
     padding-right: 17px;
 
@@ -7335,7 +7438,7 @@ footer .filial:last-of-type {
     height: 40px;
   }
 
-  .former .container .phoner::before{
+  .former .container .phoner::before {
     top: 11px;
   }
 
@@ -7352,11 +7455,11 @@ footer .filial:last-of-type {
     font-size: 13px;
   }
 
-  #sub-top .search .search-item{
+  #sub-top .search .search-item {
     padding-right: 15px;
   }
 
-  #top-item .btns{
+  #top-item .btns {
     margin-top: 23px;
     margin-bottom: 33px;
   }
@@ -7376,7 +7479,7 @@ footer .filial:last-of-type {
     line-height: 21px;
   }
 
-  .pagination ul li a, .pagination ul li span{
+  .pagination ul li a, .pagination ul li span {
     height: 25px;
     width: 25px;
     font-size: 12px;
@@ -7387,7 +7490,7 @@ footer .filial:last-of-type {
     margin-top: 10px;
   }
 
-  #top-item .btns{
+  #top-item .btns {
     margin-top: 20px;
     margin-bottom: 30px;
   }
@@ -7406,7 +7509,7 @@ footer .filial:last-of-type {
     line-height: 20px;
   }
 
-  #locate-form .container .locate{
+  #locate-form .container .locate {
     line-height: 17px;
     margin-bottom: 14px;
   }
@@ -7417,7 +7520,7 @@ footer .filial:last-of-type {
 
   .sub-requied {
     font-size: 12px;
-}
+  }
 
   #seo-text .container h2 {
     margin-top: 20px;
@@ -7428,7 +7531,7 @@ footer .filial:last-of-type {
     margin-top: 20px;
   }
 
-  .former .container{
+  .former .container {
     padding-left: 15px;
     padding-right: 15px;
     width: 95%;
