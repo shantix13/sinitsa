@@ -374,12 +374,14 @@ $('.in-partners').slick({
     slidesToScroll: 1,
     dots: true,
     arrows: true,
+    rows: 2,
     responsive: [
         {
             breakpoint: 710,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                rows: 1
             }
         }
     ]
@@ -455,39 +457,27 @@ $('#slider .container').slick({
 
 // Открываем попапы по кликам
 $('.mail').click(function () {
-    let take_offset = $(document).scrollTop();
-    take_offset = take_offset + 30;
-    $('#mail-form > .container').css({'top' : take_offset + 'px'});
     $('#mail-form').css({'display': 'flex'}).addClass('active-form').animate({'opacity': '1'}, 600);
     return false;
 });
 
 
 $('.support').click(function () {
-    let take_offset = $(document).scrollTop();
-    take_offset = take_offset + 30;
-    $('#consult-form > .container').css({'top' : take_offset + 'px'});
     $('#consult-form').css({'display': 'flex'}).addClass('active-form').animate({'opacity': '1'}, 600);
     return false;
 });
 
 
 $('.cross').click(function () {
-    let take_offset = $(document).scrollTop();
-    take_offset = take_offset + 30;
-    $('#mail-form-doc > .container').css({'top' : take_offset + 'px'});
     $('#mail-form-doc').css({'display': 'flex'}).addClass('active-form').animate({'opacity': '1'}, 600);
     return false;
 });
 
-
-$('.locate').click(function () {
-    let take_offset = $(document).scrollTop();
-    take_offset = take_offset + 30;
-    $('#locate-form > .container').css({'top' : take_offset + 'px'});
-    $('#locate-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
-    return false;
-});
+//
+// $('.locate').click(function () {
+//     $('#locate-form').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
+//     return false;
+// });
 
 
 // Закрываем попапы по кнопке закрыть
@@ -596,44 +586,85 @@ $('img.img-svg').each(function () {
 
 // Триггерим мобильное меню
 $('.menu-trigger').click(function () {
-        $('nav').animate({'left': '0'}, 500);
+        $('nav').animate({'left': '-2px'}, 500);
         $(this).addClass('is-active');
         return false;
 });
 
 $('nav .closer').click(function () {
-    $('nav').animate({'left': '-180px'}, 500);
+    $('nav').animate({'left': '-305px'}, 500);
     $(this).removeClass('is-active');
     return false;
-})
+});
+
+
+$('#ck-filialz .red .locator').click(function () {
+    $('#locate-form-1').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
+    return false;
+});
+
+$('#ck-filialz .green .locator').click(function () {
+    $('#locate-form-2').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
+    return false;
+});
+
+$('#ck-filialz .blue .locator').click(function () {
+    $('#locate-form-3').css({'display': 'flex'}).animate({'opacity': '1'}, 600);
+    return false;
+});
 
 
 
 
-//Триггерим поиск в хедере
+//Триггерим поиск в хедере + Рассчитываем координаты расположения поиска
 let take_widther = '80%';
-if($(document).width() < 600){
-    take_widther = '98%';
+if ($(document).width() < 455) {
+    take_widther = '100%';
 }
+
+
 $('.search > button').click(function () {
     if (!($(this).hasClass('is-active'))) {
+        $('.search-results-x').css({'display': 'block'});
         $('.search').css({'height': 'auto', 'width' : take_widther}, 500);
+        let right_offset = document.querySelector('#sub-top .search').getBoundingClientRect();
+        let search_width = $('.search').width();
+        right_offset = right_offset.right - search_width;
+        $('.search-results-x').css({'width' : search_width + 'px', 'left' : right_offset + 'px'});
+        //alert(right_offset);
         $(this).addClass('is-active');
         $('#sub-top .search').addClass('search-active');
         return false;
     }
 });
 
-// Клик вне поиска закрывает его.
+//Клик вне поиска закрывает его.
 $(function ($) {
     $(document).mouseup(function (e) {
-        var div = $("#sub-top .search, .title-search-result");
+        var div = $("#sub-top .search, .search-results-x");
         if (!div.is(e.target) && div.has(e.target).length === 0) {
             $('#sub-top .search').css({'width': '20px', 'height' : '20px'});
             $('#sub-top .search').removeClass('search-active');
             $('.search > button').removeClass('is-active');
-            $('.title-search-result').css({'display':'none'});
+            $('.search-results-x').css({'display':'none'});
             return false;
         }
     });
 });
+
+$('.downer').click(function () {
+    if ($(document).width() <= 705) {
+        if (!($(this).hasClass('is-active'))) {
+            $(this).siblings('a').addClass('active-deeper');
+            $(this).siblings('ul').css({'height': 'auto'});
+            $(this).addClass('is-active');
+            return false;
+        } else {
+            $(this).siblings('ul').css({'height': '0'});
+            $(this).removeClass('is-active');
+            $(this).siblings('a').removeClass('active-deeper');
+            return false;
+        }
+    }
+});
+
