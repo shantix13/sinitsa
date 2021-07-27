@@ -1086,9 +1086,9 @@ header {
 
     h2 {
       color: $blue;
-      margin-top: 70px;
       font-size: 30px;
       font-weight: 800;
+      margin-bottom: 20px;
 
       span {
         color: $green;
@@ -1106,6 +1106,7 @@ header {
   .left-side {
     //width: 700px;
     width: 50%;
+    align-self: center;
   }
 
   img {
@@ -1530,6 +1531,7 @@ section .center {
   position: fixed;
   right: 0;
   top: 30%;
+  z-index: 99;
 
   ul {
     display: flex;
@@ -1566,12 +1568,17 @@ section .center {
     overflow: hidden;
   }
 
+  .support{
+    border-radius: 8px 0 0;
+    overflow: hidden;
+  }
+
   .locate {
     border-radius: 0 0 0 8px;
     overflow: hidden;
   }
 
-  button {
+  button, a {
     @include flex-nowrap;
     align-items: center;
     justify-content: flex-end;
@@ -1580,6 +1587,7 @@ section .center {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
+    text-decoration: none;
 
     div {
       overflow: hidden;
@@ -1618,36 +1626,40 @@ section .center {
   }
 }
 
-.former {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(38, 48, 75, 0.85);
-  display: none;
-  align-items: center;
+.fancybox-slider{
+  display: flex;
   justify-content: center;
-  opacity: 0;
-  z-index: 999;
-  min-width: 320px;
+  align-items: center;
+}
 
-  .container {
-    width: 570px;
-    position: absolute;
-    background-color: #fff;
-    @include bordex(10px);
-    padding-left: 50px;
-    padding-right: 50px;
-    height: auto;
-    padding-bottom: 30px;
+
+.fancybox-slider .fancybox-slide--inline {
+  min-width: 320px;
+  width: 570px;
+  background-color: #fff;
+  @include bordex(10px);
+  padding-left: 50px;
+  padding-right: 50px;
+  height: auto;
+  padding-bottom: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+
+
+  .former{
+    padding: 0 !important;
+    margin: 0 !important;
+    position: static !important;
+    width: 100% !important;
+  }
 
     h2 {
       font-weight: 700;
       color: $purple;
       font-size: 30px;
       padding-top: 25px;
-      margin-bottom: 15px;
     }
 
     .closer {
@@ -1719,7 +1731,11 @@ section .center {
       box-sizing: border-box;
     }
 
-    button {
+  .fancybox-close-small{
+    display: none !important;
+  }
+
+    button[type="submit"] {
       background-color: $blue;
       text-align: center;
       display: flex;
@@ -1765,8 +1781,6 @@ section .center {
       }
 
     }
-
-  }
 }
 
 #success-form .container {
@@ -2057,6 +2071,7 @@ section .center {
       &:hover {
         background-color: #fff;
         transition: all 0.4s 0.02s ease;
+        color: $green;
 
         svg {
           background-color: $green;
@@ -3436,6 +3451,19 @@ section .center {
   align-items: flex-start;
 }
 
+// Scroll
+
+.nicescroll-rails{
+  height: 5px !important;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.nicescroll-cursors{
+  cursor: pointer;
+  top: -2px !important;
+}
+
 // Adaptive Styles
 
 @media(max-width: 1610px) {
@@ -3502,7 +3530,7 @@ section .center {
     width: 1070px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 47px;
     padding-right: 47px;
   }
@@ -3694,7 +3722,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 44px;
     font-size: 29px;
   }
 
@@ -3702,7 +3729,7 @@ section .center {
     margin-top: 98px
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 28px;
   }
 
@@ -3713,7 +3740,7 @@ section .center {
     width: 970px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 44px;
     padding-right: 44px;
   }
@@ -3978,7 +4005,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 40px;
     font-size: 28px;
   }
 
@@ -3986,10 +4012,9 @@ section .center {
     margin-top: 95px
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 26px;
   }
-
 }
 
 @media(max-width: 1030px) {
@@ -4005,7 +4030,7 @@ section .center {
     padding: 19px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 41px;
     padding-right: 41px;
   }
@@ -4022,10 +4047,6 @@ section .center {
     width: 250px;
   }
 
-  .table-item {
-    width: 947px;
-  }
-
   section .center {
     width: 740px;
   }
@@ -4038,9 +4059,6 @@ section .center {
     width: 940px;
   }
 
-  #seo-text .container h2 {
-    margin-top: 40px;
-  }
 
   #about-main .container .left-side {
     width: 400px;
@@ -4339,7 +4357,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 38px;
     font-size: 27px;
   }
 
@@ -4366,8 +4383,21 @@ section .center {
     border-radius: 10px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 25px;
+  }
+
+  .table-item{
+    overflow-x: auto;
+  }
+
+  .table-item h3 + div {
+    width: 947px;
+    height: 100%;
+  }
+
+  #sub-item .right-side{
+    margin-top: 20px;
   }
 }
 
@@ -4382,17 +4412,6 @@ section .center {
 
   #top-item .btns .sign-up {
     margin-right: 15px;
-  }
-
-  .table-item {
-    white-space: nowrap;
-  }
-
-  .table-item > div {
-    width: 947px;
-    height: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
   }
 
   .pagination {
@@ -4420,7 +4439,7 @@ section .center {
     margin-right: 20px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 38px;
     padding-right: 38px;
   }
@@ -4505,7 +4524,7 @@ section .center {
     background-size: 20px auto;
   }
 
-  #right-icons button span {
+  #right-icons button span, #right-icons a span {
     padding-top: 19px;
     padding-bottom: 17px;
     font-size: 16px;
@@ -4839,7 +4858,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 36px;
     font-size: 26px;
   }
 
@@ -4856,7 +4874,7 @@ section .center {
     margin-top: 95px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 24px;
   }
 
@@ -4897,7 +4915,7 @@ section .center {
     margin-bottom: 20px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -5296,7 +5314,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 33px;
     font-size: 25px;
   }
 
@@ -5305,7 +5322,7 @@ section .center {
     margin-bottom: 19px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 35px;
   }
 
@@ -5328,7 +5345,7 @@ section .center {
     margin-top: 20px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -5354,7 +5371,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 30px;
     font-size: 24px;
   }
 
@@ -5626,11 +5642,7 @@ section .center {
     font-size: 23px;
   }
 
-  #sub-item .table-item {
-    margin-bottom: 38px
-  }
-
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 34px;
   }
 
@@ -5647,7 +5659,7 @@ section .center {
     margin-bottom: 48px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 23px;
   }
 
@@ -5673,6 +5685,8 @@ section .center {
     margin-top: -30px;
     right: auto;
   }
+
+
 
   #sub-top nav > ul > li .downer{
     position: absolute;
@@ -5723,7 +5737,7 @@ section .center {
     line-height: 22px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 29px;
     padding-right: 29px;
     padding-bottom: 33px;
@@ -6094,13 +6108,11 @@ section .center {
 
   #seo-text .container h2 {
     font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 15px;
   }
 
-  #sub-item .table-item {
-    margin-bottom: 35px
-  }
-
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 32px;
   }
 
@@ -6121,7 +6133,7 @@ section .center {
     margin-top: -15px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 22px;
   }
 
@@ -6236,25 +6248,25 @@ section .center {
     font-size: 15px;
   }
 
-  .former .container select, .former .container input[type="text"] {
+  .fancybox-slider .fancybox-slide--inline .former select, .fancybox-slider .fancybox-slide--inline .former input[type="text"] {
     height: 50px;
   }
 
-  .former .container button {
+  .fancybox-slider .fancybox-slide--inline .former button[type="submit"] {
     height: 54px;
   }
 
-  .former .container .phoner::before {
+  .fancybox-slider .fancybox-slide--inline .former .phoner::before {
     top: 15px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 26px;
     padding-right: 26px;
     padding-bottom: 31px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     width: 90%;
   }
 
@@ -6601,7 +6613,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 29px;
     font-size: 21px;
   }
 
@@ -6610,11 +6621,7 @@ section .center {
     margin-bottom: 14px;
   }
 
-  #sub-item .table-item {
-    margin-bottom: 32px
-  }
-
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 30px;
   }
 
@@ -6665,6 +6672,10 @@ section .center {
     position: static;
   }
 
+  .table-item h3 + div {
+    width: 596px;
+  }
+
   .search-results-x {
     top: 205px;
   }
@@ -6696,14 +6707,18 @@ section .center {
   }
 
   #right-icons ul li {
-    width: calc(100% / 4);
+    width: calc(100% / 2);
   }
 
-  #right-icons button div {
+  #right-icons button div, #right-icons a div {
     width: 0 !important;
   }
 
-  #right-icons button span {
+  #right-icons .support{
+    border-radius: 0;
+  }
+
+  #right-icons button span, #right-icons a span {
     display: none !important;
   }
 
@@ -6766,7 +6781,7 @@ section .center {
     font-size: 18px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 23px;
     padding-right: 23px;
     padding-bottom: 28px;
@@ -6977,7 +6992,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 26px;
     font-size: 20px;
   }
 
@@ -6986,11 +7000,7 @@ section .center {
     margin-bottom: 14px;
   }
 
-  #sub-item .table-item {
-    margin-bottom: 29px
-  }
-
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 28px;
   }
 
@@ -7007,7 +7017,7 @@ section .center {
     margin-top: -21px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 21px;
   }
 }
@@ -7203,11 +7213,7 @@ section .center {
     margin-bottom: 14px;
   }
 
-  #sub-item .table-item {
-    margin-bottom: 26px
-  }
-
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 26px;
   }
 
@@ -7224,7 +7230,7 @@ section .center {
     margin-top: -24px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former  h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 20px;
   }
 
@@ -7294,7 +7300,7 @@ section .center {
     font-size: 14px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 25px;
@@ -7308,7 +7314,7 @@ section .center {
     bottom: -10px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 24px;
   }
 
@@ -7469,11 +7475,7 @@ section .center {
     margin-bottom: 14px;
   }
 
-  #sub-item .table-item {
-    margin-bottom: 23px
-  }
-
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 22px;
   }
 
@@ -7501,7 +7503,7 @@ section .center {
     margin-bottom: 10px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former  h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 19px;
   }
 
@@ -7556,7 +7558,7 @@ section .center {
     font-size: 12px;
   }
 
-  .former .container .closer {
+  .fancybox-slider .fancybox-slide--inline .former .closer {
     right: 15px;
     top: 22px;
     width: 20px;
@@ -7564,17 +7566,17 @@ section .center {
     background-size: 100%;
   }
 
-  .former .container button {
+  .fancybox-slider .fancybox-slide--inline .former button[type="submit"] {
     height: 50px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 17px;
     padding-right: 17px;
 
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     font-size: 18px;
   }
 
@@ -7611,10 +7613,6 @@ section .center {
     margin-top: 65px
   }
 
-  #sub-item .table-item {
-    margin-bottom: 20px
-  }
-
   #sub-item h3 {
     font-size: 16px;
     margin-bottom: 14px;
@@ -7625,7 +7623,7 @@ section .center {
     line-height: 19px;
   }
 
-  .former .container h2, #locate-form .container h2 {
+  .fancybox-slider .fancybox-slide--inline .former h2, .fancybox-slider .fancybox-slide--inline .locate-form h2 {
     padding-top: 20px;
     padding-bottom: 23px;
   }
@@ -7796,15 +7794,14 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 23px;
     font-size: 19px;
   }
 
-  .former .container input[type="text"], .former .container select {
+  .fancybox-slider .fancybox-slide--inline .former input[type="text"], .fancybox-slider .fancybox-slide--inline .former select {
     height: 40px;
   }
 
-  .former .container .phoner::before {
+  .fancybox-slider .fancybox-slide--inline .former .phoner::before {
     top: 11px;
   }
 
@@ -7812,7 +7809,7 @@ section .center {
     font-size: 13px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     width: 95%;
   }
 
@@ -7889,7 +7886,6 @@ section .center {
   }
 
   #seo-text .container h2 {
-    margin-top: 20px;
     font-size: 18px;
   }
 
@@ -7897,7 +7893,7 @@ section .center {
     margin-top: 20px;
   }
 
-  .former .container {
+  .fancybox-slider .fancybox-slide--inline .former {
     padding-left: 15px;
     padding-right: 15px;
     width: 95%;

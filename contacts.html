@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ветеринарная клиника Синица - страница контактов.</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"/>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 </head>
 <body>
 
@@ -389,8 +391,7 @@
 
 
 <!-- Попап местоположения -->
-<div class="former locate-form" id="locate-form-1">
-    <div class="container">
+<div class="former locate-form" id="locate-form-1" style="display: none">
         <h2>Как добраться?</h2>
         <div class="locate">
             г. Москва, ул.Маршала Неделина д.16, стр.5, МЦД Рабочий поселок
@@ -407,13 +408,11 @@
             до остановки
             «Кунцевский рынок». Выйдя из автобуса, перейти дорогу и пройти по прямой в глубь жилого массива 200
             метров.</p>
-        <span class="closer"></span>
-    </div>
+        <span class="closer" onclick="$.fancybox.close(); return false;"></span>
 </div>
 
 <!-- Попап местоположения -->
-<div class="former locate-form" id="locate-form-2">
-    <div class="container">
+<div class="former locate-form" id="locate-form-2" style="display: none">
         <h2>Как добраться?</h2>
         <div class="locate">
             Ул. Набережная Новикова-Прибоя д. 5, к.2    м. Народного Ополчения.
@@ -432,14 +431,12 @@
             Или автобус 597 - проехать до остановки «Набережная Новикова-Прибоя д.10». Перейти дорогу, вы на месте.
 
             метров.</p>
-        <span class="closer"></span>
-    </div>
+        <span class="closer" onclick="$.fancybox.close(); return false;"></span>
 </div>
 
 
 <!-- Попап местоположения -->
-<div class="former locate-form" id="locate-form-3">
-    <div class="container">
+<div class="former locate-form" id="locate-form-3" style="display: none">
         <h2>Как добраться?</h2>
         <div class="locate">
             ул. Ленинский проспект 81/2 м. Университет
@@ -448,8 +445,7 @@
         <p>На общественном транспорте:</p>
         <p class="strong">от м. «Университет»: выход №1 пройти до остановки «Метро Университет», автобус №113 до остановки «Строителей» Выйдя из автобуса, перейти дорогу вы на месте.</p>
         <p class="strong">от м. «Университет»:  пешком 17мин. выход №2 пройти вдоль ул. Проспект Вернадского до пересечения с ул. Строителей, идти прямо по ул. Строителей до пересечения с ул. Ленинский проспект, перейти дорогу, вы на месте.</p>
-        <span class="closer"></span>
-    </div>
+        <span class="closer" onclick="$.fancybox.close(); return false;"></span>
 </div>
 <script src="./js/template.js"></script>
 </body>
