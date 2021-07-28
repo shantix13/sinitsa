@@ -2098,17 +2098,23 @@ section .center {
   .table-item {
     margin-bottom: 50px;
     counter-reset: section;
+
+
+    table{
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #E4E4E4;
+      display: block;
+    }
   }
 
   .table-caption {
-    @include flex-nowrap;
-    align-items: center;
 
-    & > div {
+    & > td {
       text-align: left;
       font-weight: 500;
       font-size: 14px;
-      border-top: 1px solid $debugger-font;
+      border-top: none;
       padding-top: 22px;
       padding-bottom: 25px;
       padding-left: 30px;
@@ -2116,8 +2122,7 @@ section .center {
 
       &:first-of-type {
         width: 5%;
-        border-left: 1px solid $debugger-font;
-        border-radius: 10px 0 0 0;
+        border-left: none;
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
@@ -2136,8 +2141,7 @@ section .center {
 
       &:nth-of-type(4) {
         width: 15%;
-        border-right: 1px solid $debugger-font;
-        border-radius: 0 10px 0 0;
+        border-right: none;
         text-align: center;
         padding-left: 10px;
         padding-right: 10px;
@@ -2146,9 +2150,8 @@ section .center {
   }
 
   .table-row {
-    @include flex-nowrap;
 
-    & > div {
+    & > td {
       text-align: left;
       font-size: 14px;
       border-top: 1px solid $debugger-font;
@@ -2162,7 +2165,7 @@ section .center {
 
       &:first-of-type {
         width: 5%;
-        border-left: 1px solid $debugger-font;
+        border-left: none;
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
@@ -2186,7 +2189,7 @@ section .center {
 
       &:nth-of-type(4) {
         width: 15%;
-        border-right: 1px solid $debugger-font;
+        border-right: none;
         color: $green;
         text-align: center;
         padding-left: 10px;
@@ -2195,17 +2198,8 @@ section .center {
     }
 
     &:last-of-type {
-      div {
-        border-bottom: 1px solid $debugger-font;
-
-        &:first-of-type {
-          border-radius: 0 0 0 10px;
-        }
-
-        &:last-of-type {
-          border-radius: 0 0 10px 0;
-        }
-
+      td {
+        border-bottom: none;
       }
     }
   }
@@ -4391,7 +4385,7 @@ section .center {
     overflow-x: auto;
   }
 
-  .table-item h3 + div {
+  #sub-item .table-item table {
     width: 947px;
     height: 100%;
   }
@@ -6672,7 +6666,7 @@ section .center {
     position: static;
   }
 
-  .table-item h3 + div {
+  #sub-item .table-item table {
     width: 596px;
   }
 
